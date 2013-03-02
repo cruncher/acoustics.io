@@ -28,7 +28,7 @@
 	
 	<link rel="stylesheet" href="/css/bolt.normalise.css" />
 	<link rel="stylesheet" href="/css/bolt.typography.css" />
-	<link rel="stylesheet" href="/css/bolt.typography.15_24.css" />
+	<link rel="stylesheet" href="/css/bolt.typography.15_20.css" />
 	<link rel="stylesheet" href="/css/bolt.forms.css" />
 	<link rel="stylesheet" href="/css/bolt.classes.css" />
 	<link rel="stylesheet" href="/css/bolt.theme.css" />
@@ -44,7 +44,32 @@
 </head>
 
 <body>
-	<h1>Bolt.</h1>
+	<h1>acoustics.io</h1>
+	
+	<form>
+		<fieldset data-template="fieldset">
+			<label for="level_{{n}}">Level</label>
+			<input type="range" class="level_input" value="70" min="0" max="140" id="level_{{n}}" />
+			
+			<label for="dist_{{n}}">Distance</label>
+			<input type="range" class="dist_input" value="10" min="1" max="200" step="1" id="dist_{{n}}" />
+			
+			<label for="barrier_{{n}}">Barrier</label>
+			<select id="barrier_{{n}}">
+				<option value="0">No barrier</option>
+				<option value="1">Eye level</option>
+				<option value="2">Above eye level</option>
+			</select>
+			
+			<label for="ground_{{n}}">Ground</label>
+			<input type="range" class="ground_input" value="0" min="0" max="1" step="0.01" id="ground_{{n}}" />
+			
+			<label for="ontime_{{n}}">On time</label>
+			<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.1" id="time_{{n}}" />
+			
+			<ouput class="subtotal_output"></ouput>
+		</fieldset>
+	</form>
 	
 	<script>
 		// Function.prototype.bind is the ES5 feature with by far the worst support. Use it
