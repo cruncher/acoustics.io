@@ -1,1 +1,1 @@
-var noiseApp = App();
+window.noiseApp = App();

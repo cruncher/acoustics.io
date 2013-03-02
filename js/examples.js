@@ -116,3 +116,18 @@ console.log(thing); // [TypeError] 'thing' is not defined
 })(window);
 
 
+
+
+// LOOPS
+
+var l = 4;
+
+while (l--) {
+	console.log(l); // 3 ... 2 ... 1 ... 0
+}
+
+
+
+
+
+
