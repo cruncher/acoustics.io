@@ -1,7 +1,6 @@
 (function(app, undefined){
 	var fieldsetData = {};
 	
-	
 	jQuery.extend(app.views, {
 		fieldset: function (node, model) {
 			var elem = jQuery(node),
@@ -10,6 +9,8 @@
 			model.on('output', function (model) {
 				output.html(model.get('output'));
 			});
+			
+			elem.data('model', model);
 		},
 		
 		form: function(node, model) {
@@ -21,7 +22,16 @@
 			
 			app.data.sources = [sourceModel];
 			
-			elem.append(sourceNode);
+			elem
+			.append(sourceNode)
+			.on('change', 'input, select', function() {
+				var elem = jQuery(e.target).closest('fieldset'),
+				    model = elem.data('model'),
+				    name = e.target.name,
+				    value = e.target.value;
+				
+				model.set(name, value);
+			});
 		}
 	});
 })(noiseApp, Model);
