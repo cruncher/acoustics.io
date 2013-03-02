@@ -1,1 +1,0 @@
-window.noiseApp = new window.App();
