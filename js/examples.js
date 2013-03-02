@@ -89,11 +89,14 @@ console.log(thing); // [TypeError] 'thing' is not defined
 // a function, however, your statement should be terminated with
 // a semi-colon.
 
+
+// Here is a closure that exports an object to window, the global
+// scope.
+
 (function(window) {
 	
-	
 	function log() {
-		
+		// do something
 	}
 	
 	function log10() {
@@ -104,14 +107,12 @@ console.log(thing); // [TypeError] 'thing' is not defined
 		
 	}
 	
+	// Export the functions we want in the namespace 'acousticFns'
 	
 	window.acousticFns = {
 		log10: log10
 		killDan: killDan
 	};
 })(window);
-
-
-
 
 
