@@ -80,7 +80,7 @@ console.log(thing); // [TypeError] 'thing' is not defined
 (function(n, m) {
 	console.log(n); // 1
 	console.log(m); // 2	
-}(1, 2));
+})(1, 2);
 
 
 // Note that function declarations do not need to be
@@ -88,3 +88,30 @@ console.log(thing); // [TypeError] 'thing' is not defined
 // was no semi-colon after the end brace '}'. Whenever you call
 // a function, however, your statement should be terminated with
 // a semi-colon.
+
+(function(window) {
+	
+	
+	function log() {
+		
+	}
+	
+	function log10() {
+		// do something
+	}
+	
+	function killDan() {
+		
+	}
+	
+	
+	window.acousticFns = {
+		log10: log10
+		killDan: killDan
+	};
+})(window);
+
+
+
+
+
