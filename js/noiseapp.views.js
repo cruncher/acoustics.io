@@ -24,13 +24,24 @@
 			
 			elem
 			.append(sourceNode)
-			.on('change', 'input, select', function() {
+			.on('change', 'input, select', function(e) {
 				var elem = jQuery(e.target).closest('fieldset'),
 				    model = elem.data('model'),
 				    name = e.target.name,
 				    value = e.target.value;
 				
 				model.set(name, value);
+			});
+
+			jQuery(document)
+			.on('click', 'button', function (e) {
+				var sourceModel = new app.models.Source({});
+				    sourceNode = app.render('fieldset', {
+				    	pk: app.data.sources.length || 0
+				    });
+				
+				app.data.sources.push(sourceModel);
+				elem.append(sourceNode);
 			});
 		}
 	});
