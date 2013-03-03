@@ -79,6 +79,10 @@ footer > .site_wrap {
 	border-bottom: 1px solid #cccccc;
 }
 
+.actions_index {
+	margin-top: 2em;
+}
+
 .logo_thumb {
 	margin-left: 1.4em;
 	margin-right: 1.4em;
@@ -143,7 +147,7 @@ label > .icon_thumb {
 }
 
 .total_output {
-	font-size: 5em;
+	font-size: 4.6em;
 	text-align: center;
 	font-weight: bold;
 	line-height: 1em;
