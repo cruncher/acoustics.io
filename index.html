@@ -91,10 +91,10 @@
 					><div class="col">
 						<label>SWL or SPL?<a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
 						
-						<label for="leveltypew_{{pk}}">Sound power level (L<sub>W</sub>)</label>
+						<label for="leveltypew_{{pk}}">SWL (L<sub>W</sub>)</label>
 						<input type="radio" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
 						
-						<label for="leveltypep_{{pk}}">Sound pressure level (L<sub>P</sub>)</label>
+						<label for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
 						<input type="radio" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
 						
 						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
@@ -105,9 +105,9 @@
 						<label for="level_{{pk}}">
 							Plant Noise Level
 							<span class="readout"></span>
-							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#something" data-icon="i">Information</a>
 						</label>
-						<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
+						<input type="range" class="y_range level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
 					</div
 					
 					><div class="col">
@@ -236,7 +236,16 @@
 			<p>Do you need a more detailed construction noise assessment? Get in touch with <a href="mailto:info@goodhandacoustics.co.uk">Goodhand Acoustics</a>.</p>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<!--sdfsd -->
+=======
+	
+	<div class="top_tip tip" id="something">
+		Fuck you, motherfuck.
+	</div>
+	
+	
+>>>>>>> 2849b8ba9c27f9437bce032ef38fc740e351703b
 	<img src="images/silhouette.png" />
 	
 	<footer>
@@ -259,6 +268,7 @@
 	<script src="sub/bolt/js/jquery.prefix.js"></script>
 	<script src="sub/bolt/js/jquery.event.tap.js"></script>
 	<script src="sub/bolt/js/jquery.event.activate.js"></script>
+	<script src="sub/bolt/js/jquery.transition.fallback.js"></script>
 	
 	<script src="sub/bolt/js/bolt.js"></script>
 	<script src="sub/bolt/js/bolt.a.js"></script>

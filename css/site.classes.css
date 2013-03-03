@@ -80,6 +80,12 @@ footer > .site_wrap {
 	margin-bottom: 0.6em;
 }
 
+.source_fieldset label {
+	font-size: 0.8em;
+	line-height: 1.6667em;
+	height: 1.6667em;
+}
+
 .actions_index {
 	margin-top: 2em;
 }
@@ -136,6 +142,15 @@ label > .icon_thumb {
 	
 	border: 0.2em solid #92aa20;
 	border-radius: 0.4em;
+}
+
+.js .top_tip {
+	margin-top: -3em;
+	margin-left: -1.6em;
+}
+
+.js .top_tip.active {
+	margin-top: -3.6em;
 }
 
 
