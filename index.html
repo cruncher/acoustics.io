@@ -55,8 +55,8 @@
 	</header>
 	
 	<div class="site_wrap wrap">
-		<form class="source_wrap wrap" data-view="form" data-data="form">
-			<div class="6_col_wrap col_wrap wrap" data-template="fieldset">
+		<form class="sources_col" data-view="form" data-data="form">
+			<div class="6_col_wrap col_wrap wrap">
 				<div class="col">
 					Noise source
 				</div
@@ -81,8 +81,10 @@
 				</div>
 			</div>
 
-			<fieldset class="source_fieldset 6_col_wrap col_wrap wrap" data-template="fieldset">
+			<fieldset class="source_fieldset 6_col_wrap col_wrap wrap" data-template="source">
 				<div class="col">
+					<label> <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
+					
 					<label for="leveltypew_{{pk}}">Sound Power Level (L<sub>W</sub>)</label>
 					<input type="radio" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
 					
@@ -94,22 +96,37 @@
 				</div
 				
 				><div class="col">
-					<label for="level_{{pk}}">Level <span class="readout"></span></label>
+					<label for="level_{{pk}}">
+						Level
+						<span class="readout"></span>
+						<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+					</label>
 					<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
 				</div
 				
 				><div class="col">
-					<label for="ontime_{{pk}}">On time <span class="readout"></span></label>
+					<label for="ontime_{{pk}}">
+						On time
+						<span class="readout"></span>
+						<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+					</label>
 					<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
 				</div
 				
 				><div class="col">
-					<label for="dist_{{pk}}">Distance to receptor <span class="readout"></span></label>
+					<label for="dist_{{pk}}">
+						Distance to receptor
+						<span class="readout"></span>
+						<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+					</label>
 					<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 				</div
 				
 				><div class="col">
-					<label for="barrier_{{pk}}">Barrier</label>
+					<label for="barrier_{{pk}}">
+						Barrier
+						<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+					</label>
 					<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
 					<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="1" />
 					<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="2" />
@@ -119,6 +136,10 @@
 					<div class="source_output"></div>
 				</div>
 			</fieldset>
+			
+			<ul class="actions_index index">
+				<li><button class="add_button" data-icon="+">Add source</button></li>
+			</ul>
 		</form
 		
 		><div class="total_col col">
@@ -133,12 +154,6 @@
 				</div>
 			</details>
 		</div>
-	</div>
-	
-	<div class="site_wrap wrap">
-		<ul class="actions_index index">
-			<li><button class="add_button" data-icon="+">Add source</button></li>
-		</ul>
 	</div>
 	
 	<img src="images/silhouette.png" />
@@ -178,6 +193,7 @@
 	<script src="js/noiseapp.models.total.js"></script>
 	<script src="js/noiseapp.views.source.js"></script>
 	<script src="js/noiseapp.views.total.js"></script>
+	<script src="js/noiseapp.views.form.js"></script>
 	<script>
 		window.noiseApp.data = {
 			form: {}

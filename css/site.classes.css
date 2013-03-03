@@ -39,17 +39,22 @@ footer > .site_wrap {
 }
 
 
-.site_wrap,
-.source_wrap {
+.site_wrap {
 	width: 80%;
 	max-width: 72em;
 }
 
-.source_wrap {
-	margin-bottom: 2em;
+.sources_col {
+	width: 80%;
+	margin-right: -80%;
 }
 
-.source_wrap > .source_fieldset {
+.total_col {
+	width: 20%;
+	left: 80%;
+}
+
+.sources_col > .source_fieldset {
 	margin-bottom: 0.4em;
 }
 
