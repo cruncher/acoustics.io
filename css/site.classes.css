@@ -7,15 +7,42 @@ body {
 
 body > header {
 	height: 5em;
-	background-color: #dd7433;
-	color: white;
-	padding-top: 1em;
-	margin-bottom: 2em;
+	background-color: #c3d23b;
+	color: #2b3134;
+	padding-top: 0em;
+	margin-bottom: 3em;
+	border-top: 0.4em solid #373e42;
 }
+
+header h1 {
+	font-family: 'Happy Monkey', cursive;
+	font-size: 1.8em;
+}
+
+body > img {
+	display: block;
+	width: 100%;
+	margin-top: 5em;
+	height: auto;
+}
+
+body > footer {
+	height: 14em;
+	background-color: #2b3134;
+	color: #8b969b;
+	margin-bottom: 0;
+	padding-top: 5em;
+}
+
+footer > .site_wrap {
+	text-align: right;
+}
+
 
 .site_wrap,
 .source_wrap {
 	width: 80%;
+	max-width: 72em;
 }
 
 .source_wrap {
@@ -37,6 +64,18 @@ body > header {
 	background-image:         linear-gradient(top, #fefefe, #dedede);
 	border-top: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
+}
+
+.logo_thumb {
+	margin-left: 1.4em;
+	margin-right: 1.4em;
+}
+
+.cr_logo_thumb {
+	width: 13.3333em;
+	padding-top: 4.4333em;
+	background-image: url('http://cruncher.ch/static/images/logotype_400x133.png');
+	vertical-align: -1.4em;
 }
 
 .add_button,
@@ -64,11 +103,10 @@ body > header {
 
 .source_output {
 	width: 100%;
-	height: 2.2em;
-	font-size: 1.4em;
-	background-color: white;
-	border: 0.2em solid #dedede;
-	border-radius: 0.4em;
+	line-height: 2em;
+	font-size: 1.8em;
+	text-align: right;
+	color: #666666;
 }
 
 

@@ -35,6 +35,7 @@
 	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.col.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" />
 	<link rel="stylesheet" href="css/site.classes.css" />
+	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
 	
 	<!--[if (lt IE 9)&(!IEMobile)]>
 	<link rel="stylesheet" href="sub/bolt/css/bolt.layout.32em.css" media="all" />
@@ -61,22 +62,20 @@
 			</div
 			
 			><div class="col">
+				<label for="ontime_{{pk}}">On time</label>
+				<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
+			</div
+			
+			><div class="col">
 				<label for="dist_{{pk}}">Distance</label>
-				<input type="range" class="dist_input" value="10" min="1" max="200" step="1" name="distance" id="dist_{{pk}}" />
+				<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 			</div
 			
 			><div class="col">
 				<label for="barrier_{{pk}}">Barrier</label>
-				<select id="barrier_{{pk}}" name="barrier">
-					<option value="0">No barrier</option>
-					<option value="1">Eye level</option>
-					<option value="2">Above eye level</option>
-				</select>
-			</div
-			
-			><div class="col">
-				<label for="ontime_{{pk}}">On time</label>
-				<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
+				<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
+				<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="1" />
+				<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="2" />
 			</div
 			
 			><div class="col">
@@ -90,6 +89,17 @@
 			<li><button class="add_button" data-icon="+">Add source</button></li>
 		</ul>
 	</div>
+	
+	<img src="images/silhouette.png" />
+	
+	<footer>
+		<div class="site_wrap wrap">
+			Website by
+			<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
+			Acoustics by
+			<a class="ga_logo_thumb logo_thumb thumb" href="http://goodhandacoustics.co.uk">Goodhand Acoustics</a> 
+		</div>
+	</footer>
 	
 	<script>
 		// Function.prototype.bind is the ES5 feature with by far the worst support. Use it

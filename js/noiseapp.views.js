@@ -15,7 +15,7 @@
 			
 			model.on('output', function(model) {
 				var value = model.get('output');
-				output.html(Math.round(value));
+				output.html(Math.round(value) + ' dB');
 			});
 			
 			elem.data('model', model);
@@ -41,17 +41,20 @@
 				    name = e.target.name,
 				    value = parseFloat(e.target.value);
 				
+				console.log(elem, model, name, value);
+				
 				model.set(name, value);
 			});
 
 			jQuery(document)
 			.on('click', 'button', function (e) {
-				var sourceModel = new app.models.Source({});
+				var sourceModel = new app.models.Source(sourceData);
 				    sourceNode = app.render('fieldset', {
-				    	pk: app.data.sources.length || 0
+				    	pk: app.data.sources.length
 				    });
 				
 				app.data.sources.push(sourceModel);
+				app.views.fieldset(sourceNode, sourceModel);
 				elem.append(sourceNode);
 			});
 		}
