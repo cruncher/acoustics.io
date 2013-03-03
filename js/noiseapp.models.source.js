@@ -135,14 +135,14 @@
 		this.on('barrier', function(sourcemodel){
 			if (debug) console.log(sourcemodel.get('barrier'));
 			
-			kbarvVar = kbar(sourcemodel.get('barrier'));
+			kbarVar = kbar(sourcemodel.get('barrier'));
 			recNoiseLevel(sourcemodel);
 		});
 		
 		this.on('time', function(sourcemodel){
 			if (debug) console.log(sourcemodel.get('time'));
 			
-			kpercVar = kpercOnTime(sourcemodel.get('time'));
+			kpercOnTimeVar = kpercOnTime(sourcemodel.get('time'));
 			recNoiseLevel(sourcemodel);
 		});
 	};
