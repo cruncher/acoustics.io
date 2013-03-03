@@ -66,13 +66,13 @@
 
 	function ks(d,r){
 
-		return 20*acfns.log10(r/d);
+		return 25*acfns.log10(r/d)-2;
 
 	}
 
 	function kh(d,r){
 		console.log(d, r, acfns.log10(r/d));
-		return 25*acfns.log10(r/d)-2;
+		return 20*acfns.log10(r/d);
 
 	}
 
@@ -113,7 +113,7 @@
 				khVar = khLw(dist);
 			}
 			else {
-				khVar = kh(refDist, dist);
+				khVar = kh(dist, refDist);
 			}
 		}
 		
@@ -128,7 +128,7 @@
 		this.on('distance', function(sourcemodel){
 			if (debug) console.log(sourcemodel.get('distance'));
 			
-			distAttenuation(sourcemodel.get('distance',refDist));
+			distAttenuation(sourcemodel.get('distance'),refDist);
 			recNoiseLevel(sourcemodel);
 		});
 			
