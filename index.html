@@ -78,7 +78,7 @@
 					</div
 						
 					><div class="col">
-						<h2 class="cap_title">Sound pressure level at the receptor</h2>
+						<h2 class="cap_title">SPL Receptor</h2>
 					</div>
 				</div>
 	
@@ -89,7 +89,7 @@
 					</div
 					
 					><div class="col">
-						<label>SWL or SPL?<a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
+						<label>SWL or SPL?<a class="icon_thumb thumb" href="#swl_spl" data-icon="i">Information</a></label>
 						
 						<label for="leveltypew_{{pk}}">SWL (L<sub>W</sub>)</label>
 						<input type="radio" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
@@ -97,15 +97,15 @@
 						<label for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
 						<input type="radio" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
 						
-						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
+						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#ref_distance" data-icon="i">Information</a></label>
 						<input type="text" value="" name="levelref" id="levelref_{{pk}}" />
 					</div
 					
 					><div class="col">
 						<label for="level_{{pk}}">
-							Plant Noise Level
+							Noise Level
 							<span class="readout"></span>
-							<a class="icon_thumb thumb" href="#something" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="y_range level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
 					</div
@@ -114,16 +114,16 @@
 						<label for="ontime_{{pk}}">
 							% On Time
 							<span class="readout"></span>
-							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#per_on_time" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
 					</div
 					
 					><div class="col">
 						<label for="dist_{{pk}}">
-							Distance from Source to Receptor
+							Distance
 							<span class="readout"></span>
-							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#distance" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 					</div
@@ -131,7 +131,7 @@
 					><div class="col">
 						<label for="barrier_{{pk}}">
 							Barrier Correction
-							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#barrier" data-icon="i">Information</a>
 						</label>
 						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
 						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="1" />
@@ -150,7 +150,7 @@
 		</form
 		
 		><div class="total_col col">
-			<h2 class="cap_title">Total Sound Pressure Level at the Receptor</h2>
+			<h2 class="cap_title">Total SPL at Receptor</h2>
 			<p class="total_output" data-view="total" data-data="total">120 dB</p>
 			
 			<details>
@@ -238,11 +238,26 @@
 	</div>
 
 	
-	<div class="top_tip tip" id="something">
-		Fuck you, motherfuck.
+	<div class="top_tip tip" id="swl_spl">
+		Is the plant noise level a sound power level (SWL) or sound pressure level (SPL). If you measured it on site then it is likely to be a sound pressure level.
 	</div>
-	
+	<div class="top_tip tip" id="ref_distance">
+		You only need to enter something here if you have selected SPL. This is the distance that you were from the plant when you measured the noise level.
+	</div>
+	<div class="top_tip tip" id="plant_noise_level">
+		This is the noise level of the plant. Duh.
+	</div>
+	<div class="top_tip tip" id="per_on_time">
+		This the percentage if the day that the plant will operate for. I.e. for a 10-hour day, 10% represents 1 hour.
+	</div>
+	<div class="top_tip tip" id="distance">
+		This is the distance from the source (your piece of construction plant) to the receptor (i.e. the residential property)
+	</div>
+	<div class="top_tip tip" id="barrier">
+		This is 
+	</div>
 
+	
 	<img src="images/silhouette.png" />
 	
 	<footer>
