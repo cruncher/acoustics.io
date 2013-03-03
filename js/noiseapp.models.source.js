@@ -113,7 +113,7 @@
 				khVar = khLw(dist);
 			}
 			else {
-				khVar = kh(refDist, dist);
+				khVar = kh(dist, refDist);
 			}
 		}
 		
