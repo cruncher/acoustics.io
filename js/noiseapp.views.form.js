@@ -1,26 +1,33 @@
 (function(jQuery, app, Model, undefined){
-	var defaultData = {
-	    	level: 70,
-	    	distance: 10,
-	    	barrier: 0,
-	    	time: 1
-	    };
+	function getOutput(model) {
+		return model.get('output');
+	}
+	
+	function collectOutputs(collection, model, fn) {
+		model.on('output', function() {
+			fn(collection.map(getOutput));
+		});
+	}
+	
+	function sendOutputs(outputs) {
+		app.data.total.set('outputs', outputs);
+	}
 	
 	app.views.form = function(node, model) {
 		var elem = jQuery(node),
 		    sourcesWrap = elem.find('.sources_wrap'),
-		    sourceData = jQuery.extend({}, defaultData),
-		    sourceModel = new app.models.Source(sourceData),
+		    sourceModel = new app.models.Source(),
 		    sourceNode = app.render('source', {
 		    	pk: 0
 		    });
 		
 		app.data.sources = [sourceModel];
 		app.views.source(sourceNode, sourceModel);
+		collectOutputs(app.data.sources, sourceModel, sendOutputs);
 		
 		elem
 		.on('click', 'button', function (e) {
-			var sourceModel = new app.models.Source(sourceData);
+			var sourceModel = new app.models.Source();
 			    sourceNode = app.render('source', {
 			    	pk: app.data.sources.length
 			    });
@@ -28,6 +35,7 @@
 			app.data.sources.push(sourceModel);
 			app.views.source(sourceNode, sourceModel);
 			sourcesWrap.append(sourceNode);
+			collectOutputs(app.data.sources, sourceModel);
 		});
 		
 		sourcesWrap

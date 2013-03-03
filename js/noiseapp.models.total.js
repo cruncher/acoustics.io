@@ -3,6 +3,12 @@
 	
 	// Class logic
 	
+	function calcTotal(model) {
+		var outputs = model.get('outputs');
+		
+		console.log(outputs);
+	}
+	
 	function TotalModel(data, url) {
 		if (!(this instanceof TotalModel)) {
 			return new TotalModel(data, url);
@@ -11,6 +17,9 @@
 		Model.apply(this, arguments);
 		
 		// Instance logic
+		
+		this.on('outputs', calcTotal);
+		
 		
 	};
 	

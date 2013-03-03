@@ -83,7 +83,14 @@
 	}
 	
 	function SourceModel(data, url) {
-		Model.apply(this, arguments);
+		// If data don't exist, set up some default data
+		
+		Model.call(this, data || {
+			level: 70,
+			distance: 10,
+			barrier: 0,
+			time: 1
+	    }, url);
 		
 		var kpercOnTimeVar = kpercOnTime(this.get('time')),
 			kbarVar = kbar(this.get('barrier')),
@@ -93,15 +100,10 @@
 		
 		distAttenuation(this.get('distance'), refDist);
 		recNoiseLevel(this);
-		
+	
 		function recNoiseLevel(model){
-			
-			console.log('>>>', srcNoiseLvl - attenuation());
-			
 			model.set('output', srcNoiseLvl - attenuation());
-		}	
-
-
+		}
 		
 		function attenuation(){
 			return khVar + kpercOnTimeVar + kbarVar + kfacVar;
