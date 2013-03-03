@@ -13,7 +13,8 @@
 			    output = elem.find('.source_output');
 			
 			model.on('output', function (model) {
-				output.html(model.get('output'));
+				var value = model.get('output');
+				output.html(Math.round(value));
 			});
 			
 			elem.data('model', model);
