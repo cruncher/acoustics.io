@@ -78,7 +78,7 @@
 					</div
 						
 					><div class="col">
-						<h2 class="cap_title">Sound pressure level at the receptor</h2>
+						<h2 class="cap_title">Sound pressure level</h2>
 					</div>
 				</div>
 	
@@ -91,14 +91,23 @@
 					><div class="col">
 						<label>SWL or SPL?<a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
 						
-						<label for="leveltypew_{{pk}}">SWL (L<sub>W</sub>)</label>
-						<input type="radio" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
+						<ul class="tabs_index index">
+							<li>
+								<input type="radio" class="hidden" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
+								<label class="radio_button button" for="leveltypew_{{pk}}" checked>SWL (L<sub>W</sub>)</label>
+							</li
+							
+							><li>
+								<input type="radio" class="hidden" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
+								<label class="radio_button button" for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
+							</li>
+						</ul>
 						
-						<label for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
-						<input type="radio" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
-						
-						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
-						<input type="text" value="" name="levelref" id="levelref_{{pk}}" />
+						<label class="lp_dist hidden" for="levelref_{{pk}}">
+							Ref. distance
+							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+						</label>
+						<input class="lp_dist hidden" type="text" value="" name="levelref" id="levelref_{{pk}}" />
 					</div
 					
 					><div class="col">
@@ -150,7 +159,7 @@
 		</form
 		
 		><div class="total_col col">
-			<h2 class="cap_title">Total Sound Pressure Level at the Receptor</h2>
+			<h2 class="cap_title">Total Sound Pressure Level</h2>
 			<p class="total_output" data-view="total" data-data="total">120 dB</p>
 			
 			<details>
