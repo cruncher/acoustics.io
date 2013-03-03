@@ -96,7 +96,7 @@
 		
 		function recNoiseLevel(model){
 			
-			console.log(srcNoiseLvl - attenuation());
+			console.log('>>>', srcNoiseLvl - attenuation());
 			
 			model.set('output', srcNoiseLvl - attenuation());
 		}	
