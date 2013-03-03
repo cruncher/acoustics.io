@@ -39,17 +39,30 @@ footer > .site_wrap {
 }
 
 
-.site_wrap,
-.source_wrap {
+.site_wrap {
 	width: 80%;
 	max-width: 72em;
 }
 
-.source_wrap {
-	margin-bottom: 2em;
+.app_wrap {
+	padding-right: 3em;
 }
 
-.source_wrap > .source_fieldset {
+.sources_col {
+	/* 7/9 column */
+	width: 78%;
+	margin-right: -78%;
+}
+
+.total_col {
+	/* 2/9 column */
+	width: 22%;
+	margin-right: -22%;
+	left: 78%;
+	margin-left: 3em;
+}
+
+.sources_col > .source_fieldset {
 	margin-bottom: 0.4em;
 }
 
@@ -66,6 +79,10 @@ footer > .site_wrap {
 	border-bottom: 1px solid #cccccc;
 }
 
+.actions_index {
+	margin-top: 2em;
+}
+
 .logo_thumb {
 	margin-left: 1.4em;
 	margin-right: 1.4em;
@@ -76,6 +93,26 @@ footer > .site_wrap {
 	padding-top: 4.4333em;
 	background-image: url('http://cruncher.ch/static/images/logotype_400x133.png');
 	vertical-align: -1.4em;
+}
+
+.icon_thumb {
+	width: 1em;
+	padding-top: 1em;
+	margin-top: -0.5em;
+	
+	color: white;
+	background-color: rgb(99,108,112);
+	border-radius: 1em;
+}
+
+label {
+	position: relative;
+}
+
+label > .icon_thumb {
+	position: absolute;
+	right: 0;
+	top: 50%;
 }
 
 .add_button,
@@ -109,5 +146,25 @@ footer > .site_wrap {
 	color: #666666;
 }
 
+.total_output {
+	font-size: 4.6em;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1em;
+	margin: 0;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	color: rgb(99,108,112);
+}
+
+.cap_title {
+	text-transform: uppercase;
+	font-size: 0.6em;
+	border-bottom: 1px solid rgb(99,108,112);
+	color: rgb(99,108,112);
+	line-height: 2em;
+	margin-bottom: 1em;
+	margin-top:  0;
+}
 
 
