@@ -76,7 +76,8 @@ footer > .site_wrap {
 	background-image:      -o-linear-gradient(top, #fefefe, #dedede);
 	background-image:         linear-gradient(top, #fefefe, #dedede);
 	border-top: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid rgb(204, 204, 204);
+	margin-bottom: 0.6em;
 }
 
 .actions_index {

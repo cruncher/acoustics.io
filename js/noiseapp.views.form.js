@@ -35,7 +35,9 @@
 			app.data.sources.push(sourceModel);
 			app.views.source(sourceNode, sourceModel);
 			sourcesWrap.append(sourceNode);
-			collectOutputs(app.data.sources, sourceModel);
+			collectOutputs(app.data.sources, sourceModel, sendOutputs);
+			
+			e.preventDefault();
 		});
 		
 		sourcesWrap

@@ -5,7 +5,11 @@
 	
 	function calcTotal(totalmodel) {
 		var outputs = totalmodel.get('outputs');
-		totalmodel.set('total',acfns.dBSum(outputs));
+		
+		totalmodel.set('total', acfns.dBSum(outputs));
+		
+		
+		
 		console.log(outputs);
 	}
 	
