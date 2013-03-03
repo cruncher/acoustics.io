@@ -66,13 +66,13 @@
 
 	function ks(d,r){
 
-		return 20*acfns.log10(r/d);
+		return 25*acfns.log10(r/d)-2;
 
 	}
 
 	function kh(d,r){
 		console.log(d, r, acfns.log10(r/d));
-		return 25*acfns.log10(r/d)-2;
+		return 20*acfns.log10(r/d);
 
 	}
 
