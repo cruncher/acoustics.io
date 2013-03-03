@@ -51,8 +51,8 @@
 	}
 	
 	window.acfns={
-		log10: log10
-		dBAdd: dBAdd
+		log10: log10,
+		dBAdd: dBAdd,
 		dBAvg: dBAvg
 	};
 })(window);

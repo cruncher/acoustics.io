@@ -1,4 +1,4 @@
-(function(jQuery, app, Model, undefined){
+(function(jQuery, app, Model, acfns, undefined){
 	
 	var recFacade = true,
 	    srcFacade = false,
@@ -47,7 +47,7 @@
 	function ksLw(r){
 
 		if (r>=25){
-			return 25*log10(r)+1;
+			return 25*acfns.log10(r)+1;
 		}
 		else{
 			return khLw(r);
@@ -57,25 +57,25 @@
 
 	function khLw(r){
 
-		return 20*log10(r)+8;
+		return 20*acfns.log10(r)+8;
 
 	}
 
 	function ks(d,r){
 
-		return 20*log(r/d);
+		return 20*acfns.log10(r/d);
 
 	}
 
 	function kh(d,r){
 
-		return 25*log(r/d)-2;
+		return 25*acfns.log10(r/d)-2;
 
 	}
 
 	function kpercOnTime(p){
 
-		return 10*log10(1/p);
+		return 10*acfns.log10(1/p);
 
 	}
 	
@@ -83,12 +83,12 @@
 		Model.apply(this, arguments);
 		
 		var kpercOnTimeVar = kpercOnTime(this.get('time')),
-			kbarVar = kbar(this.get('barrier'),
+			kbarVar = kbar(this.get('barrier')),
 			kfacVar = kfac(srcFacade,recFacade),
 			khVar,
 			srcNoiseLvl = this.get('level');
 		
-		distAttenuation(sourcemodel.get('distance',refDist))
+		distAttenuation(this.get('distance',refDist));
 		recNoiseLevel(this);
 		
 		function recNoiseLevel(model){
@@ -131,7 +131,7 @@
 		});
 			
 		this.on('barrier', function(sourcemodel){
-			kbarvVar = kbar(this.get('barrier')));
+			kbarvVar = kbar(this.get('barrier'));
 			recNoiseLevel(sourcemodel);
 		});
 		
@@ -150,4 +150,4 @@
 	
 	// Export the model
 	app.models.Source = SourceModel;
-})(jQuery, noiseApp, Model);
+})(jQuery, noiseApp, Model, acfns);
