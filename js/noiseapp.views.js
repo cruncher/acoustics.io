@@ -37,8 +37,6 @@
 				    name = e.target.name,
 				    value = parseFloat(e.target.value);
 				
-				console.log(name, value, model);
-				
 				model.set(name, value);
 			});
 

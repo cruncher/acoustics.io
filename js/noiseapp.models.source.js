@@ -1,5 +1,5 @@
 (function(jQuery, app, Model, acfns, undefined){
-	var debug;
+	var debug = true;
 	
 	
 	var recFacade = true,
@@ -144,11 +144,6 @@
 			
 			kpercVar = kpercOnTime(sourcemodel.get('time'));
 			recNoiseLevel(sourcemodel);
-		});
-		
-		this.on('output', function(sourcemodel){
-			if (debug) console.log(sourcemodel.get('output'));
-			
 		});
 	};
 	
