@@ -3,21 +3,24 @@
 	    	level: 70,
 	    	distance: 10,
 	    	barrier: 0,
-	    	time: 1,
-	    	output: 0
+	    	time: 1
 	    };
+	
+
 	
 	jQuery.extend(app.views, {
 		fieldset: function (node, model) {
 			var elem = jQuery(node),
 			    output = elem.find('.source_output');
 			
-			model.on('output', function (model) {
+			model.on('output', function(model) {
 				var value = model.get('output');
 				output.html(Math.round(value));
 			});
 			
 			elem.data('model', model);
+			
+			model.trigger('output');
 		},
 		
 		form: function(node, model) {
