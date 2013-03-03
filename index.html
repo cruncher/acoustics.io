@@ -47,12 +47,14 @@
 </head>
 
 <body>
-	<header class="site_wrap wrap">
-		<h1>acoustics.io</h1>
+	<header>
+		<div class="site_wrap wrap">
+			<h1>acoustics.io</h1>
+		</div>
 	</header>
 	
-	<form class="site_wrap wrap" data-view="form" data-data="form">
-		<fieldset class="5_col_wrap col_wrap wrap" data-template="fieldset">
+	<form class="source_wrap wrap" data-view="form" data-data="form">
+		<fieldset class="source_fieldset 5_col_wrap col_wrap wrap" data-template="fieldset">
 			<div class="col">
 				<label for="level_{{pk}}">Level</label>
 				<input type="range" class="level_input" value="70" min="0" max="140" name="level" id="level_{{pk}}" />
@@ -78,14 +80,14 @@
 			</div
 			
 			><div class="col">
-				<ouput class="subtotal_output"></ouput>
+				<div class="subtotal_output"></div>
 			</div>
 		</fieldset>
 	</form>
 	
 	<div class="site_wrap wrap">
 		<ul class="actions_index index">
-			<li><button>Add</button></li>
+			<li><button class="add_button" data-icon="+">Add source</button></li>
 		</ul>
 	</div>
 	
