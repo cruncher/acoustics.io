@@ -78,7 +78,7 @@
 					</div
 						
 					><div class="col">
-						<h2 class="cap_title">Sound pressure level</h2>
+						<h2 class="cap_title">Sound pressure level at the receptor</h2>
 					</div>
 				</div>
 	
@@ -89,7 +89,7 @@
 					</div
 					
 					><div class="col">
-						<label>Noise type <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
+						<label>SWL or SPL?<a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
 						
 						<label for="leveltypew_{{pk}}">Sound power level (L<sub>W</sub>)</label>
 						<input type="radio" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
@@ -97,13 +97,13 @@
 						<label for="leveltypep_{{pk}}">Sound pressure level (L<sub>P</sub>)</label>
 						<input type="radio" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
 						
-						<label for="levelref_{{pk}}">Reference distance <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
+						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#" data-icon="i">Information</a></label>
 						<input type="text" value="" name="levelref" id="levelref_{{pk}}" />
 					</div
 					
 					><div class="col">
 						<label for="level_{{pk}}">
-							Level
+							Plant Noise Level
 							<span class="readout"></span>
 							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
 						</label>
@@ -112,7 +112,7 @@
 					
 					><div class="col">
 						<label for="ontime_{{pk}}">
-							On time
+							% On Time
 							<span class="readout"></span>
 							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
 						</label>
@@ -121,7 +121,7 @@
 					
 					><div class="col">
 						<label for="dist_{{pk}}">
-							Distance to receptor
+							Distance from Source to Receptor
 							<span class="readout"></span>
 							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
 						</label>
@@ -130,7 +130,7 @@
 					
 					><div class="col">
 						<label for="barrier_{{pk}}">
-							Barrier
+							Barrier Correction
 							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
 						</label>
 						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
@@ -150,7 +150,7 @@
 		</form
 		
 		><div class="total_col col">
-			<h2 class="cap_title">Total Sound Pressure Level</h2>
+			<h2 class="cap_title">Total Sound Pressure Level at the Receptor</h2>
 			<p class="total_output" data-view="total" data-data="total">120 dB</p>
 			
 			<details>
@@ -217,20 +217,22 @@
 						<br/>
 						When the plant noise level is expressed as a sound power level the below formula is used:<br/>
 						<br/>
-						20 x log <sub>10</sub>(<var>Distance from Source to Receptor</var> / <var>Reference Distance)</var><br/>
+						20 x log<sub>10</sub>(<var>Distance from Source to Receptor</var> / <var>Reference Distance)</var><br/>
 					</p>						
-					<h3>Fa&cedil;ade Correction</h3>				
+					<h3>Fa&ccedil;ade Correction</h3>				
 					<p>
-						<var>Fa&cedil;ade correction</var> are not included in this application. But, it is fairly straightforward to incorporate them yourself.
-						Reflections are accounted for by adding 3 dB to the results. If the piece of plant is withing 1 or 2 m of a hard reflecting surface (accepting)
-						If the receptor is at a facade (which it often is as the receptor is normally a building) then you should add 3 dN to the total noise level. 
+						<var>Fa&ccedil;ade correction</var> are not included in this application. But, it is fairly straightforward to incorporate them yourself.
+						Reflections are accounted for by adding 3 dB to the results.
+						There are two places that the noise is affected by reflections (at least according to BS 5228!): at the source or at the receptor.
+						If the piece of plant is withing 1 or 2 m of a hard reflecting surface (not the floor which is already encorporated in the calculations) then add 3 dB to the <var>Plant Noise Level<var/>
+						If the receptor is at a facade (which it often is as the receptor is normally a building) then you should add 3 dB to the <var>Total Sound Pressure Level<var/>. 
 					</p>
 				
 				</div>
 			</details>
 
 			<h2 class="cap_title">I need more help</h2>
-			<p>Get in touch with <a href="mailto:daniel@goodhandacoustics.co.uk">Goodhand Acoustics</a>.</p>
+			<p>Do you need a more detailed construction noise assessment? Get in touch with <a href="mailto:info@goodhandacoustics.co.uk">Goodhand Acoustics</a>.</p>
 		</div>
 	</div>
 	
@@ -238,10 +240,10 @@
 	
 	<footer>
 		<div class="site_wrap wrap">
-			Website by
-			<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
 			Acoustics by
 			<a class="ga_logo_thumb logo_thumb thumb" href="http://goodhandacoustics.co.uk">Goodhand Acoustics</a> 
+			Website by
+			<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
 		</div>
 	</footer>
 	
