@@ -128,7 +128,7 @@
 		this.on('distance', function(sourcemodel){
 			if (debug) console.log(sourcemodel.get('distance'));
 			
-			distAttenuation(sourcemodel.get('distance',refDist));
+			distAttenuation(sourcemodel.get('distance'),refDist);
 			recNoiseLevel(sourcemodel);
 		});
 			
