@@ -2,7 +2,7 @@
 	var debug = true;
 	
 	
-	var recFacade = true,
+	var recFacade = false,
 	    srcFacade = false,
 	    swlBool = false,
 	    refDist = 10;
@@ -37,11 +37,11 @@
 		var kfacvar = 0;
 
 		if (srcFacade === true){
-			kfacvar = kfacvar + 3;
+			kfacvar = kfacvar - 3;
 		}
 		
 		if (recFacade === true){
-			kfacvar = kfacvar + 3;
+			kfacvar = kfacvar - 3;
 		}
 
 		return kfacvar;
