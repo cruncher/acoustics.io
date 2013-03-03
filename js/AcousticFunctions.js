@@ -7,7 +7,7 @@
 	  return ln(n) / ln(10);
 	}
 
-	function dBAdd(n) {
+	function dBSum(n) {
 
 		var dBObj = dBCalc(arguments);
 		return 10*log10(dBObj.totpow);
@@ -52,7 +52,7 @@
 	
 	window.acfns={
 		log10: log10,
-		dBAdd: dBAdd,
+		dBSum: dBSum,
 		dBAvg: dBAvg
 	};
 })(window);
