@@ -1,12 +1,10 @@
 (function(app, undefined){
-	var sourceData = {
+	var defaultData = {
 	    	level: 70,
 	    	distance: 10,
 	    	barrier: 0,
 	    	time: 1
 	    };
-	
-
 	
 	jQuery.extend(app.views, {
 		fieldset: function (node, model) {
@@ -20,12 +18,14 @@
 			
 			elem.data('model', model);
 			
+			// Immediately update the view 
 			model.trigger('output');
 		},
 		
 		form: function(node, model) {
 			var elem = jQuery(node),
-			    sourceModel = new app.models.Source(sourceData);
+			    sourceData = jQuery.extend({}, defaultData),
+			    sourceModel = new app.models.Source(sourceData),
 			    sourceNode = app.render('fieldset', {
 			    	pk: 0
 			    });
