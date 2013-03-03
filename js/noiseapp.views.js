@@ -1,5 +1,10 @@
 (function(app, undefined){
-	var fieldsetData = {};
+	var sourceData = {
+	    	level: 70,
+	    	distance: 10,
+	    	barrier: 0,
+	    	time: 1
+	    };
 	
 	jQuery.extend(app.views, {
 		fieldset: function (node, model) {
@@ -15,12 +20,13 @@
 		
 		form: function(node, model) {
 			var elem = jQuery(node),
-			    sourceModel = new app.models.Source(fieldsetData);
+			    sourceModel = new app.models.Source(sourceData);
 			    sourceNode = app.render('fieldset', {
 			    	pk: 0
 			    });
 			
 			app.data.sources = [sourceModel];
+			app.views.fieldset(sourceNode, sourceModel);
 			
 			elem
 			.append(sourceNode)
