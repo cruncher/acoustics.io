@@ -157,23 +157,23 @@
 				<summary class="cap_title">About this result</summary>
 				
 				<div>
-					<p>
+					<p align="justify">
 						These calculations are based on the noise prediction methods contained in Annex F of BS 5228-1:2009. The calculations assume that the intervening ground is hard and uses the simple barrier attenuation method.
 						
 					</p>
 					<h3>Plant Noise Level</h3>
-					<p> 
+					<p align="justify"> 
 						The unit for this is dB. 
 						Obtain the noise level by direct measurement of similar plant in the same mode of operation, or use the values given in Annexes C and D of BS 5228-1:2009.
 						The actual noise measurement is L<sub>Aeq,T</sub>. This is just a technical definition that means the average noise level during the measurement period T.
 					</p>
 					<h3>SWL or SPL</h3>
-					<p>
+					<p align="justify">
 						It is important to identify whether the noise level is sound pressure level (<var>L<sub>P</sub></var>) or sound power level (<var>L<sub>W</sub></var>).
 						If the noise level is a sound pressure level then it is necessary to specify at what distance this was measured at.
 					</p>
 					<h3>Reference Distance</h3>
-					<p>
+					<p align="justify">
 						This field only needs to be specified when the <var>plant noise level</var> is expressed as a sound pressure level. 
 						The <var>reference distance</var> is the distance at which the noise level was measured.
 						This often gets overlooked.
@@ -182,7 +182,7 @@
 						So, if you were to specify 80 dB or 40 dB as a sound pressure level measurement, they could be the same noise level or vastly different if you haven't also specified the distance you were away when you took the measurement.
 					</p>
 					<h3>% On Time</h3>
-					<p>
+					<p align="justify">
 						Normally noise from construction is assessed as an average noise level over a period of time.
 						For instance, if you were operating between 8 am and 6 pm, you would actually be interested in a 10-hour average and this is expressed as L<sub>Aeq,10hr</sub>. 
 						The units are in dB, but you may also include the word L<sub>Aeq,10hr</sub> after the dB. 
@@ -195,7 +195,7 @@
 						<br/>
 					</p>
 					<h3>Barrier Correction</h3>
-					<p>
+					<p align="justify">
 						BS 5228 has two methods of calculating how much barriers reduce noise: a complicated way and a simple way.
 						This application uses the simple way.
 						Basically, the reduction is noise due to the barrier is either 0 dB, -5 dB or - 10 dB.
@@ -207,7 +207,7 @@
 						But, topographical features such as earth bunds can be treated the same way as noise barriers.
 					</p>
 					<h3>Distance from Source to Receptor</h3>
-					<p>
+					<p align="justify">
 						Now this one is a little more complicated. In fact BS 5228 has some quite complicated formulas for distance correction when there is "soft ground" between the source and the receptor.
 						This application assumes that all the intervening ground is "hard". 
 						There are two formulas that are used to calculate the reduction in noise as you get further way from the source.
@@ -220,7 +220,7 @@
 						20 x log<sub>10</sub>(<var>Distance from Source to Receptor</var> / <var>Reference Distance)</var><br/>
 					</p>						
 					<h3>Fa&ccedil;ade Correction</h3>				
-					<p>
+					<p align="justify">
 						<var>Fa&ccedil;ade correction</var> are not included in this application. But, it is fairly straightforward to incorporate them yourself.
 						Reflections are accounted for by adding 3 dB to the results.
 						There are two places that the noise is affected by reflections (at least according to BS 5228!): at the source or at the receptor.
