@@ -8,6 +8,7 @@
 	
 	app.views.form = function(node, model) {
 		var elem = jQuery(node),
+		    sourcesWrap = elem.find('.sources_wrap'),
 		    sourceData = jQuery.extend({}, defaultData),
 		    sourceModel = new app.models.Source(sourceData),
 		    sourceNode = app.render('source', {
@@ -18,6 +19,18 @@
 		app.views.source(sourceNode, sourceModel);
 		
 		elem
+		.on('click', 'button', function (e) {
+			var sourceModel = new app.models.Source(sourceData);
+			    sourceNode = app.render('source', {
+			    	pk: app.data.sources.length
+			    });
+			
+			app.data.sources.push(sourceModel);
+			app.views.source(sourceNode, sourceModel);
+			sourcesWrap.append(sourceNode);
+		});
+		
+		sourcesWrap
 		.append(sourceNode)
 		.on('change', 'input, select', function(e) {
 			var elem = jQuery(e.target).closest('fieldset'),
@@ -28,16 +41,6 @@
 			console.log(elem, model, name, value);
 			
 			model.set(name, value);
-		})
-		.on('click', 'button', function (e) {
-			var sourceModel = new app.models.Source(sourceData);
-			    sourceNode = app.render('source', {
-			    	pk: app.data.sources.length
-			    });
-			
-			app.data.sources.push(sourceModel);
-			app.views.source(sourceNode, sourceModel);
-			elem.append(sourceNode);
 		});
 	};
 })(jQuery, noiseApp, Model);
