@@ -11,7 +11,7 @@
 			var elem = jQuery(node),
 			    output = elem.find('output');
 			
-			model.on('output', function (model) {
+			model.on('.source_output', function (model) {
 				output.html(model.get('output'));
 			});
 			
