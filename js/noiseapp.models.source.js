@@ -1,4 +1,6 @@
 (function(jQuery, app, Model, acfns, undefined){
+	var debug;
+	
 	
 	var recFacade = true,
 	    srcFacade = false,
@@ -13,19 +15,20 @@
 	
 	function kbar(barLineOfSite){
 
-		var kbarvar
+		var kbarvar;
 
 		switch (barLineOfSite) {
-			case (barLineOfSite === 0):
+			case 0:
 				kbarvar = 0;
 				break;
-			case (barLineOfSite === 1):
+			case 1:
 				kbarvar = 5;
 				break;
-			case (barLineOfSite === 2):
+			case 2:
 				kbarvar = 10;
 				break;
-		}		
+		}
+		
 		return kbarvar;
 	}
 	
@@ -68,7 +71,7 @@
 	}
 
 	function kh(d,r){
-
+		console.log(d, r, acfns.log10(r/d));
 		return 25*acfns.log10(r/d)-2;
 
 	}
@@ -88,63 +91,70 @@
 			khVar,
 			srcNoiseLvl = this.get('level');
 		
-		distAttenuation(this.get('distance',refDist));
+		distAttenuation(this.get('distance'), refDist);
 		recNoiseLevel(this);
 		
 		function recNoiseLevel(model){
-					
+			
+			console.log(srcNoiseLvl - attenuation());
+			
 			model.set('output', srcNoiseLvl - attenuation());
 		}	
 
 
 		
 		function attenuation(){
-		
 			return khVar + kpercOnTimeVar + kbarVar + kfacVar;
-		 
 		}
 		
 		
 		function distAttenuation(dist, refDist){
-	
-			if (swlBool){
-		
+			if (swlBool) {
 				khVar = khLw(dist);
-		
 			}
-			else{
-		
-				khVar = kh(refDist,dist);
-		
-			};
+			else {
+				khVar = kh(refDist, dist);
+			}
 		}
 		
 		
 		this.on('level', function(sourcemodel){
+			if (debug) console.log(sourcemodel.get('level'));
+			
 			srcNoiseLvl = sourcemodel.get('level');
 			recNoiseLevel(sourcemodel);
 		});
 		
 		this.on('distance', function(sourcemodel){
+			if (debug) console.log(sourcemodel.get('distance'));
+			
 			distAttenuation(sourcemodel.get('distance',refDist));
 			recNoiseLevel(sourcemodel);
 		});
 			
 		this.on('barrier', function(sourcemodel){
-			kbarvVar = kbar(this.get('barrier'));
+			if (debug) console.log(sourcemodel.get('barrier'));
+			
+			kbarvVar = kbar(sourcemodel.get('barrier'));
 			recNoiseLevel(sourcemodel);
 		});
 		
-		this.on('time', function(sourcemode){
-			kpercVar = kpercOnTime(this.get('time'));
+		this.on('time', function(sourcemodel){
+			if (debug) console.log(sourcemodel.get('time'));
+			
+			kpercVar = kpercOnTime(sourcemodel.get('time'));
 			recNoiseLevel(sourcemodel);
+		});
+		
+		this.on('output', function(sourcemodel){
+			if (debug) console.log(sourcemodel.get('output'));
+			
 		});
 	};
 	
 	SourceModel.prototype = Object.create(Model.prototype);
 	
 	jQuery.extend(SourceModel.prototype, {
-		a: 'yeah'
 		
 	});
 	

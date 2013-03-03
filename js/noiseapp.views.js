@@ -3,15 +3,16 @@
 	    	level: 70,
 	    	distance: 10,
 	    	barrier: 0,
-	    	time: 1
+	    	time: 1,
+	    	output: 0
 	    };
 	
 	jQuery.extend(app.views, {
 		fieldset: function (node, model) {
 			var elem = jQuery(node),
-			    output = elem.find('output');
+			    output = elem.find('.source_output');
 			
-			model.on('.source_output', function (model) {
+			model.on('output', function (model) {
 				output.html(model.get('output'));
 			});
 			
@@ -34,7 +35,9 @@
 				var elem = jQuery(e.target).closest('fieldset'),
 				    model = elem.data('model'),
 				    name = e.target.name,
-				    value = e.target.value;
+				    value = parseFloat(e.target.value);
+				
+				console.log(name, value, model);
 				
 				model.set(name, value);
 			});
