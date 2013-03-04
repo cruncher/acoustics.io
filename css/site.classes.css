@@ -62,6 +62,18 @@ footer > .site_wrap {
 	margin-left: 3em;
 }
 
+.col_wrap > .name_col {
+	width: 20%;
+}
+
+.col_wrap > .level_col {
+	width: 25%;
+}
+
+.col_wrap > .env_col {
+	width: 25%;
+}
+
 .sources_col > .source_fieldset {
 	margin-bottom: 0.4em;
 }
@@ -80,14 +92,64 @@ footer > .site_wrap {
 	margin-bottom: 0.6em;
 }
 
-.source_fieldset label {
+label {
 	font-size: 0.8em;
 	line-height: 1.6667em;
 	height: 1.6667em;
 }
 
+.source_fieldset > .col {
+	height: auto;
+}
+
+
+/* .index */
+
 .actions_index {
 	margin-top: 2em;
+}
+
+
+.tabs_index {
+	white-space: nowrap;
+}
+
+.tabs_index > li > .button {
+  width: 100%;
+  border-left-width: 0;
+  
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+       -o-border-radius: 0;
+          border-radius: 0;
+}
+
+.tabs_index > li:first-child > .button {
+   border-left-width: 1px;
+   
+  -webkit-border-top-left-radius: 9px;
+     -moz-border-radius-topleft: 9px;
+       -o-border-top-left-radius: 9px;
+          border-top-left-radius: 9px;
+  -webkit-border-bottom-left-radius: 9px;
+     -moz-border-radius-topleft: 9px;
+       -o-border-bottom-left-radius: 9px;
+          border-bottom-left-radius: 9px;
+}
+
+.tabs_index > li:last-child > .button:last-child {
+  -webkit-border-bottom-right-radius: 9px;
+     -moz-border-radius-topright: 9px;
+       -o-border-bottom-right-radius: 9px;
+          border-bottom-right-radius: 9px;
+  -webkit-border-top-right-radius: 9px;
+     -moz-border-radius-topright: 9px;
+       -o-border-top-right-radius: 9px;
+          border-top-right-radius: 9px;
+}
+
+input + .tabs_index {
+	margin-top: 0.8em;
 }
 
 .logo_thumb {
@@ -122,6 +184,19 @@ label > .icon_thumb {
 	top: 50%;
 }
 
+.tabs_index + label {
+	margin-top: 0.8em;
+}
+
+
+
+/* .button */
+
+.button {
+	height: 2.4em;
+	line-height: 2.2667em;
+}
+
 .add_button,
 .add_button:hover {
 	line-height: 2.6em;
@@ -143,6 +218,32 @@ label > .icon_thumb {
 	border: 0.2em solid #92aa20;
 	border-radius: 0.4em;
 }
+
+input:checked + .radio_button,
+input:checked + .radio_button:hover {
+  color: white;
+  text-shadow: 0 -1px rgba(0,0,0,0.5);
+
+  -webkit-box-shadow: inset 2px 4px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: inset 2px 4px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 2px 4px 10px rgba(0, 0, 0, 0.5);
+  
+  background: #649FC9;
+}
+
+[type="text"] {
+	font-size: 1.4em;
+	line-height: 1.4em;
+	color: #373e42;
+	border: 1px solid #999999;
+}
+
+[type="range"] {
+	margin-top: 0.4em;
+}
+
+
+/* .tip */
 
 .js .top_tip {
 	margin-top: -3em;
