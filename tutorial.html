@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	
+	<title>acoustics.io - construction noise tutorial</title>
+	
+	<script>document.documentElement.className = 'js';</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<!-- Force latest IE rendering engine & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- Make IE recognise HTML5 elements for styling -->
+	<!--[if lte IE 8]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<noscript>
+		<strong>Warning!</strong>
+		Your browser does not support HTML5 so some elements on this page are simulated using JScript. Unfortunately your browser has JScript disabled. Please enable it in order to display this page.
+	</noscript>
+	<![endif]-->
+	<!-- Disable image toolbar in IE6 -->
+	<!--[if lte IE 6]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+	
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	
+	<link rel="stylesheet" href="sub/app/css/app.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.normalise.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.typography.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.typography.15_20.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.forms.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.col.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" />
+	<link rel="stylesheet" href="css/site.classes.css" />
+	<link rel="stylesheet" href="fonts/icons/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
+	<style>
+		h3{font-weight:bold;}
+		var{font-family:Courier,monospace;}
+	</style>
+	<!--[if (lt IE 9)&(!IEMobile)]>
+	<link rel="stylesheet" href="sub/bolt/css/bolt.layout.32em.css" media="all" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.layout.48em.css" media="all" />
+	<![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie.css" /><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie8.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" href="sub/bolt/css/bolt.ie7.css" /><![endif]-->
+	<!--[if IE 6]><link rel="stylesheet" href="sub/bolt/css/bolt.ie6.css" /><![endif]-->
+</head>
+
+<body>
+	<header>
+		<div class="site_wrap wrap">
+			<h1>acoustics.io</h1>
+		</div>
+	</header>
+	
+	<div class="app_wrap site_wrap wrap">
+		<div class="sources_col col">
+			<h3>Plant Noise Level</h3>
+			<p> 
+				Noise is given in decibels (dB). 
+				To fill in this field you can obtain the noise level by direct measurement of similar plant in the same mode of operation, or use the values given in Annexes C and D of BS 5228-1:2009.
+				The actual noise measurement parameter you will use is L<sub>Aeq,T</sub> - this just means the average noise level during the measurement, where "T" stands for the length of your measurement.
+			</p>
+			<h3>SWL or SPL</h3>
+			<p>
+				It is important to identify whether the noise level is a sound pressure level (<var>SPL</var>) or a sound power level (<var>SWL</var>).
+				If the noise level is a sound pressure level then you must tell the application what distance the noise was measured.
+			</p>
+			<h3>Reference Distance</h3>
+			<p>
+				This field only needs to be specified when the <var>plant noise level</var> is expressed as a sound pressure level (<var>SPL</var>). 
+				The <var>reference distance</var> is the distance at which the noise level was measured.
+				This often gets overlooked.
+				Imagine if you were to take a noise measurement of a piece of construction plant 1 m away, it could be quite loud and you could measure something like 80 dB (as an example).
+				Now, if you were to walk 100 m away from that same piece of plant, you would measure 40 dB.
+				So, if you don't know the distance from the plant the measurement was taken, it is meaningless because you would never know if it was really loud but far away or really quiet but close up.
+			</p>
+			<h3>On Time</h3>
+			<p>
+				This is specified as a percentage.
+				Normally noise from construction is assessed as an average noise level over a period of time.
+				For instance, if you were operating between 8 am and 6 pm, you would actually be interested in a 10-hour average. 
+				The units are still in dB, but you would often see the word L<sub>Aeq,10hr</sub> after the dB sign. 
+				For instance, you might write "the noise from the construction site is 73 dB L<sub>Aeq,10hr</sub> at the nearest residential property."
+				It is important to understand this because to work out the average you have to consider what duration each of your pieces of construction plant is operating throughout the working day.
+				For example, your normal working day is from 8 am to 6 pm and you know you need to use an excavator from 8 am until 11 am, you would make the <var>on time</var> as 30% because 30% of a 10-hour working day is 3 hours.
+				The formula for calculating the noise level correction used by the application is:<br/>
+				<br/>
+				<var>10 x log<sub>10</sub>(On-Time/100)</var>
+				<br/>
+				<br/>
+			</p>
+			<h3>Barrier Correction</h3>
+			<p>
+				BS 5228 has two methods of calculating how much barriers reduce noise - a complicated way and a simple way.
+				This application uses the simple way.
+				Basically, the reduction of noise due to the barrier is either 0 dB, -5 dB or - 10 dB.
+				If the barrer does not obstruct line of sight between the piece of machinery and the receptor then you correct the noise level by 0 dB.
+				If the top of the plant is just visible over the noise barrier the noise level is corrected by 5 dB.
+				When the noise barrier completely hides the noise source then the noise level is corrected by 10 dB.
+				It is important to remember that noise barriers are solid and have no gaps in them.
+				Anything with gaps or is light weight will not reduce noise by the same amount.
+				Topographical features such as earth bunds can be treated the same way as noise barriers.
+			</p>
+			<h3>Distance from Source to Receptor</h3>
+			<p>
+				Now this one is a little more complicated because BS 5228 has some quite complicated formulas for distance correction when there is "soft ground" between the source and the receptor.
+				This application assumes that all the intervening ground is "hard". 
+				There are two formulas that are used to calculate the reduction in noise as you get further way from the source.
+				The following formula is used where the plant noise level is defined as a sound power level (<var>SWL</var>):<br/>
+				<br/>
+				<var> 20 x log<sub>10</sub>(Distance) + 8</var>
+				<br/>
+				<br/>
+				When the plant noise level is expressed as a sound pressure level (<var>SPL</var>), the below formula is used:<br/>
+				<br/>
+				<var>20 x log<sub>10</sub>(Distance from Source to Receptor / Reference Distance)</var>
+				
+				<br/>
+			</p>
+			<h3>Fa&ccedil;ade Correction</h3>
+			<p>
+				<var>Fa&ccedil;ade corrections</var> are not included in this application. But, it is fairly straightforward to incorporate them yourself.
+				Reflections are accounted for by adding 3 dB to the results.
+				There are two places that the noise is affected by reflections (at least according to BS 5228) - at the source and/or at the receptor.
+				If the piece of plant is within 1 or 2 m of a hard reflecting surface (not including the ground which is already encorporated in the calculations) then add 3 dB to the <var>Plant Noise Level</var>.
+				If the receptor is at a facade (which it often is as the receptor is normally a building) then you should add 3 dB to the <var>Total SPL at Receptor</var>. Job done.
+			</p>
+		</div
+		
+		><div class="total_col col">
+
+			<h2 class="cap_title">I need more help</h2>
+			<p>Get in touch with <a href="mailto:info@goodhandacoustics.co.uk">Goodhand Acoustics</a>.</p>
+		</div>
+	</div>
+
+	
+	<img src="images/silhouette.png" />
+	
+	<footer>
+		<div class="site_wrap wrap">
+			Acoustics by
+			<a class="ga_logo_thumb logo_thumb thumb" href="http://goodhandacoustics.co.uk">Goodhand Acoustics</a> 
+			Website by
+			<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
+		</div>
+	</footer>
+	
+	<script>
+		// Function.prototype.bind is the ES5 feature with by far the worst support. Use it
+		// to roughly detect ES5. http://kangax.github.com/es5-compat-table/
+		!Function.prototype.bind && document.write(unescape('%3Cscript src="res/es5-shim/es5-shim.min.js"%3E%3C/script%3E'));
+	</script>
+	<script src="sub/bolt/res/ios-orientationchange-fix/ios-orientationchange-fix.js"></script>
+	<script src="sub/bolt/js/jquery.js"></script>
+	<script src="sub/bolt/res/jquery.cookie/jquery.cookie.js"></script>
+	<script src="sub/bolt/js/jquery.prefix.js"></script>
+	<script src="sub/bolt/js/jquery.event.tap.js"></script>
+	<script src="sub/bolt/js/jquery.event.activate.js"></script>
+	<script src="sub/bolt/js/jquery.transition.fallback.js"></script>
+	
+	<script src="sub/bolt/js/bolt.js"></script>
+	<script src="sub/bolt/js/bolt.a.js"></script>
+	<script src="sub/bolt/js/bolt.tip.js"></script>
+	<script src="sub/bolt/js/bolt.input.js"></script>
+	<script src="sub/bolt/js/bolt.input.placeholder.js"></script>
+
+
+</body>
+</html>
