@@ -90,8 +90,13 @@
 					
 					><div class="level_col col">
 						<label for="level_{{pk}}">
+<<<<<<< HEAD
 							Noise level
 							<span class="readout"></span>
+=======
+							Level
+							<span class="level_readout readout"></span>
+>>>>>>> 994e764561edeae051ebebb10342bbaf0e4515ac
 							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
@@ -120,10 +125,10 @@
 					><div class="col">
 						<label for="ontime_{{pk}}">
 							% On Time
-							<span class="readout"></span>
+							<span class="ontime_readout readout"></span>
 							<a class="icon_thumb thumb" href="#per_on_time" data-icon="i">Information</a>
 						</label>
-						<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
+						<input type="range" class="ontime_input" value="1" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
 					</div
 					
 					><div class="env_col col">
@@ -135,7 +140,7 @@
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 
 						<label for="barrier_{{pk}}">
-							Barrier Correction
+							Barrier
 							<a class="icon_thumb thumb" href="#barrier" data-icon="i">Information</a>
 						</label>
 						
@@ -185,12 +190,12 @@
 					<p align="justify"> 
 						The unit for this is dB. 
 						Obtain the noise level by direct measurement of similar plant in the same mode of operation, or use the values given in Annexes C and D of BS 5228-1:2009.
-						The actual noise measurement is L<sub>Aeq,T</sub>. This is just a technical definition that means the average noise level during the measurement period T.
+						The actual noise measurement is L<sub>Aeq,T</sub>. This is just a technical definition that means the average noise level during the measurement period "T" where "T" stands for the length of your measurement.
 					</p>
 					<h3>SWL or SPL</h3>
 					<p align="justify">
 						It is important to identify whether the noise level is sound pressure level (<var>L<sub>P</sub></var>) or sound power level (<var>L<sub>W</sub></var>).
-						If the noise level is a sound pressure level then it is necessary to specify at what distance this was measured at.
+						If the noise level is a sound pressure level then it is necessary to specify at what distance the noise was measured at.
 					</p>
 					
 					<h3>Reference Distance</h3>
@@ -244,7 +249,7 @@
 					<p align="justify">
 						<var>Fa&ccedil;ade correction</var> are not included in this application. But, it is fairly straightforward to incorporate them yourself.
 						Reflections are accounted for by adding 3 dB to the results.
-						There are two places that the noise is affected by reflections (at least according to BS 5228!): at the source or at the receptor.
+						There are two places that the noise is affected by reflections (at least according to BS 5228): at the source or at the receptor.
 						If the piece of plant is withing 1 or 2 m of a hard reflecting surface (not the floor which is already encorporated in the calculations) then add 3 dB to the <var>Plant Noise Level<var/>
 						If the receptor is at a facade (which it often is as the receptor is normally a building) then you should add 3 dB to the <var>Total Sound Pressure Level<var/>. 
 					</p>
@@ -262,7 +267,7 @@
 		Is the plant noise level a sound power level (SWL) or sound pressure level (SPL). If you measured it on site then it is likely to be a sound pressure level.
 	</div>
 	<div class="top_tip tip" id="ref_distance">
-		You only need to enter something here if you have selected SPL. This is the distance that you were from the plant when you measured the noise level.
+		This is the distance that you were from the plant when you measured the noise level.
 	</div>
 	<div class="top_tip tip" id="plant_noise_level">
 		This is the noise level of the plant. Duh.
@@ -274,7 +279,7 @@
 		This is the distance from the source (your piece of construction plant) to the receptor (i.e. the residential property)
 	</div>
 	<div class="top_tip tip" id="barrier">
-		This is 
+		This is where you make a correction on the noise level due to any barriers. See "About this result" for more information.
 	</div>
 
 	
