@@ -78,23 +78,24 @@
 					</div
 						
 					><div class="col">
-<<<<<<< HEAD
-						<h2 class="cap_title">Sound pressure level</h2>
-=======
 						<h2 class="cap_title">SPL Receptor</h2>
->>>>>>> 5b422f96cb453fac3695d894d39e6dd0b69e2c0f
 					</div>
 				</div>
-	
+				
 				<fieldset class="source_fieldset 7_col_wrap col_wrap wrap" data-template="source">
-					<div class="col">
+					<div class="name_col col">
 						<label for="name_{{pk}}">Name</label>
 						<input type="text" class="name_input" name="name" id="name_{{pk}}" />
 					</div
 					
-					><div class="col">
-						<label>SWL or SPL?<a class="icon_thumb thumb" href="#swl_spl" data-icon="i">Information</a></label>
-						
+					><div class="level_col col">
+						<label for="level_{{pk}}">
+							Level
+							<span class="readout"></span>
+							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
+						</label>
+						<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
+
 						<ul class="tabs_index index">
 							<li>
 								<input type="radio" class="hidden" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
@@ -107,28 +108,13 @@
 							</li>
 						</ul>
 						
-<<<<<<< HEAD
+						<!--a class="icon_thumb thumb" href="#swl_spl" data-icon="i">Information</a-->
+						
 						<label class="lp_dist hidden" for="levelref_{{pk}}">
 							Ref. distance
-							<a class="icon_thumb thumb" href="#" data-icon="i">Information</a>
+							<a class="icon_thumb thumb" href="#ref_distance" data-icon="i">Information</a>
 						</label>
 						<input class="lp_dist hidden" type="text" value="" name="levelref" id="levelref_{{pk}}" />
-=======
-						<label for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
-						<input type="radio" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
-						
-						<label for="levelref_{{pk}}">Ref. distance <a class="icon_thumb thumb" href="#ref_distance" data-icon="i">Information</a></label>
-						<input type="text" value="" name="levelref" id="levelref_{{pk}}" />
->>>>>>> 5b422f96cb453fac3695d894d39e6dd0b69e2c0f
-					</div
-					
-					><div class="col">
-						<label for="level_{{pk}}">
-							Noise Level
-							<span class="readout"></span>
-							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
-						</label>
-						<input type="range" class="y_range level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
 					</div
 					
 					><div class="col">
@@ -140,16 +126,14 @@
 						<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
 					</div
 					
-					><div class="col">
+					><div class="env_col col">
 						<label for="dist_{{pk}}">
 							Distance
 							<span class="readout"></span>
 							<a class="icon_thumb thumb" href="#distance" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
-					</div
-					
-					><div class="col">
+
 						<label for="barrier_{{pk}}">
 							Barrier Correction
 							<a class="icon_thumb thumb" href="#barrier" data-icon="i">Information</a>
@@ -171,11 +155,8 @@
 		</form
 		
 		><div class="total_col col">
-<<<<<<< HEAD
-			<h2 class="cap_title">Total Sound Pressure Level</h2>
-=======
 			<h2 class="cap_title">Total SPL at Receptor</h2>
->>>>>>> 5b422f96cb453fac3695d894d39e6dd0b69e2c0f
+
 			<p class="total_output" data-view="total" data-data="total">120 dB</p>
 			
 			<details>

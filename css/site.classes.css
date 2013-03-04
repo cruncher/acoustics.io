@@ -62,6 +62,18 @@ footer > .site_wrap {
 	margin-left: 3em;
 }
 
+.col_wrap > .name_col {
+	width: 20%;
+}
+
+.col_wrap > .level_col {
+	width: 25%;
+}
+
+.col_wrap > .env_col {
+	width: 25%;
+}
+
 .sources_col > .source_fieldset {
 	margin-bottom: 0.4em;
 }
@@ -87,7 +99,7 @@ label {
 }
 
 .source_fieldset > .col {
-	height: 6.6667em;
+	height: auto;
 }
 
 
@@ -136,6 +148,10 @@ label {
           border-top-right-radius: 9px;
 }
 
+input + .tabs_index {
+	margin-top: 0.8em;
+}
+
 .logo_thumb {
 	margin-left: 1.4em;
 	margin-right: 1.4em;
@@ -166,6 +182,10 @@ label > .icon_thumb {
 	position: absolute;
 	right: 0;
 	top: 50%;
+}
+
+.tabs_index + label {
+	margin-top: 0.8em;
 }
 
 
@@ -216,6 +236,10 @@ input:checked + .radio_button:hover {
 	line-height: 1.4em;
 	color: #373e42;
 	border: 1px solid #999999;
+}
+
+[type="range"] {
+	margin-top: 0.4em;
 }
 
 
