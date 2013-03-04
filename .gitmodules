@@ -1,6 +1,6 @@
 [submodule "sub/app"]
 	path = sub/app
-	url = https://github.com/cruncher/app.js.git
+	url = git://github.com/cruncher/app.js.git
 [submodule "sub/bolt"]
 	path = sub/bolt
-	url = https://github.com/stephband/bolt.git
+	url = git://github.com/stephband/bolt.git
