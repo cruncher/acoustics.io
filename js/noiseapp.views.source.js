@@ -30,7 +30,8 @@
 		elem
 		.data('model', model)
 		.on('change', '[name="leveltype"]', function(e) {
-			if (e.currentTarget.value === "lp" && e.currentTarget.checked) {
+			// Lp is 0, Lw is 1. We want to listen for when Lp is checked
+			if (e.currentTarget.value === "0" && e.currentTarget.checked) {
 				distElem.removeClass('hidden');
 			}
 			else {

@@ -35,6 +35,7 @@
 	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.col.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" />
 	<link rel="stylesheet" href="css/site.classes.css" />
+	<link rel="stylesheet" href="fonts/icons/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
 	
 	<!--[if (lt IE 9)&(!IEMobile)]>
@@ -92,9 +93,14 @@
 						<label for="level_{{pk}}">
 							Noise level
 							<span class="level_readout readout"></span>
-							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
+							<a href="#plant_noise_level" data-icon="i"></a>
 						</label>
 						<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
+
+						<label>
+							Reference type
+							<a href="#ref_type" data-icon="i"></a>
+						</label>
 
 						<ul class="tabs_index index">
 							<li>
@@ -112,7 +118,7 @@
 						
 						<label class="lp_dist hidden" for="levelref_{{pk}}">
 							Ref. distance
-							<a class="icon_thumb thumb" href="#ref_distance" data-icon="i">Information</a>
+							<a href="#ref_distance" data-icon="i"></a>
 						</label>
 						<input class="lp_dist hidden" type="text" value="" name="levelref" id="levelref_{{pk}}" />
 					</div
@@ -121,7 +127,7 @@
 						<label for="ontime_{{pk}}">
 							% On Time
 							<span class="ontime_readout readout"></span>
-							<a class="icon_thumb thumb" href="#per_on_time" data-icon="i">Information</a>
+							<a href="#per_on_time" data-icon="i"></a>
 						</label>
 						<input type="range" class="ontime_input" value="1" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
 					</div
@@ -129,17 +135,19 @@
 					><div class="env_col col">
 						<label for="dist_{{pk}}">
 							Distance
+
 							<span class="dist_readout readout"></span>
-							<a class="icon_thumb thumb" href="#distance" data-icon="i">Information</a>
+							<a href="#distance" data-icon="i"></a>
+
 						</label>
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 
 						<label for="barrier_{{pk}}">
 							Barrier
-							<a class="icon_thumb thumb" href="#barrier" data-icon="i">Information</a>
+							<a href="#barrier" data-icon="i"></a>
 						</label>
 						
-						<ul class="radio_index index">
+						<ul class="tabs_index index">
 							<li>
 								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
 								<label class="radio_button button" for="barrier_{{pk}}_0">0 dB</label>
@@ -147,12 +155,12 @@
 							
 							><li>
 								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
-								<label class="radio_button button" for="barrier_{{pk}}_0">-5 dB</label>
+								<label class="radio_button button" for="barrier_{{pk}}_1">-5 dB</label>
 							</li
 							
 							><li>
 								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
-								<label class="radio_button button" for="barrier_{{pk}}_0">-10 dB</label>
+								<label class="radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
 							</li>
 						</ul>
 					</div
