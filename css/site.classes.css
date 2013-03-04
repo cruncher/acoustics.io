@@ -371,6 +371,7 @@ input:checked + .radio_button:hover {
 .js .tip {
 	padding: 1em;
 	font-size: 1em;
+	display: none !important;
 }
 
 .js .top_tip {
