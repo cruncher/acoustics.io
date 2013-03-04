@@ -70,8 +70,16 @@ footer > .site_wrap {
 	width: 25%;
 }
 
+.col_wrap > .time_col {
+	width: 20%;
+}
+
 .col_wrap > .env_col {
 	width: 25%;
+}
+
+.col_wrap > .output_col {
+	width: 10%;
 }
 
 .sources_col > .source_fieldset {
@@ -219,11 +227,15 @@ label + .tabs_index {
 	border-radius: 0.4em;
 }
 
-[data-icon] {
+.add_button:before {
+	color: white;
+}
+
+[data-icon]:before {
 	margin-left: 0.2em;
 	margin-right: 0.2em;
 	vertical-align: -1px;
-	color: #636C70;
+	color: #7a8387;
 }
 
 [data-icon]:hover {
@@ -256,6 +268,11 @@ input:checked + .radio_button:hover {
 
 
 /* .tip */
+
+.js .tip {
+	padding: 1em;
+	font-size: 1em;
+}
 
 .js .top_tip {
 	margin-top: -3em;
