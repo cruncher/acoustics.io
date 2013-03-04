@@ -4,7 +4,8 @@
 		    distElem = elem.find('.lp_dist'),
 		    output = elem.find('.source_output'),
 			levelreadout = elem.find('.level_readout'),
-			ontimereadout = elem.find('.ontime_readout');
+			ontimereadout = elem.find('.ontime_readout')
+			distreadout = elem.find('.dist_readout');
 		
 		model.on('output', function(model) {
 			var value = model.get('output');
@@ -19,6 +20,11 @@
 		model.on('time', function(model) {
 			var value = model.get('time');
 			ontimereadout.html(Math.round(value) + '%');
+		});
+		
+		model.on('distance', function(model) {
+			var value = model.get('distance');
+			distreadout.html(Math.round(value) + ' m');
 		});
 		
 		elem

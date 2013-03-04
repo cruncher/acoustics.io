@@ -98,13 +98,13 @@
 
 						<ul class="tabs_index index">
 							<li>
-								<input type="radio" class="hidden" value="lw" name="leveltype" id="leveltypew_{{pk}}" />
-								<label class="radio_button button" for="leveltypew_{{pk}}" checked>SWL (L<sub>W</sub>)</label>
+								<input type="radio" class="hidden" value="0" name="leveltype" id="leveltypep_{{pk}}" />
+								<label class="radio_button button" for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
 							</li
 							
 							><li>
-								<input type="radio" class="hidden" value="lp" name="leveltype" id="leveltypep_{{pk}}" />
-								<label class="radio_button button" for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
+								<input type="radio" class="hidden" value="1" name="leveltype" id="leveltypew_{{pk}}" />
+								<label class="radio_button button" for="leveltypew_{{pk}}" checked>SWL (L<sub>W</sub>)</label>
 							</li>
 						</ul>
 						
@@ -129,7 +129,7 @@
 					><div class="env_col col">
 						<label for="dist_{{pk}}">
 							Distance
-							<span class="readout"></span>
+							<span class="dist_readout readout"></span>
 							<a class="icon_thumb thumb" href="#distance" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
