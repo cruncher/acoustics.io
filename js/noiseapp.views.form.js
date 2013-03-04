@@ -63,6 +63,7 @@
 			
 			app.data.sources.splice(i,1);
 			sendOutputs(app.data.sources.map(getOutput));
+			e.preventDefault();
 		})
 		.append(sourceNode);
 		
