@@ -8,7 +8,6 @@
 			elem.html(Math.round(value) + ' dB');
 		});
 		
-		// Immediately update the view 
-		model.trigger('total');
+
 	};
 })(noiseApp, Model);

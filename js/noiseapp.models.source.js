@@ -87,7 +87,7 @@
 			leveltype: 0,
 			distance: 10,
 			barrier: 0,
-			time: 1
+			time: 100
 	    }, url);
 		
 		var kpercOnTimeVar = kpercOnTime(this._data.time),
@@ -136,6 +136,13 @@
 		
 		this.on('leveltype', function(sourcemodel){
 			if (debug) console.log(sourcemodel._data.leveltype);
+			
+			khVar = distAttenuation(sourcemodel._data.distance,sourcemodel._data.levelref, sourcemodel._data.leveltype);
+			recNoiseLevel(sourcemodel);
+		});
+
+		this.on('levelref', function(sourcemodel){
+			if (debug) console.log(sourcemodel._data.levelref);
 			
 			khVar = distAttenuation(sourcemodel._data.distance,sourcemodel._data.levelref, sourcemodel._data.leveltype);
 			recNoiseLevel(sourcemodel);

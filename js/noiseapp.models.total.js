@@ -32,9 +32,9 @@
 	
 	TotalModel.prototype = Object.create(Model.prototype);
 	
-	jQuery.extend(TotalModel.prototype, {
+	//jQuery.extend(TotalModel.prototype, {
 		
-	});
+	//});
 	
 	// Export
 	app.models.Total = TotalModel;
