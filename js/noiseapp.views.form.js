@@ -9,22 +9,27 @@
 		});
 	}
 	
+	function uncollectOutputs(collection, model, fn) {
+		model.off('output');
+	}
+	
 	function sendOutputs(outputs) {
 		app.data.total.set('outputs', outputs);
 	}
 	
 	app.views.form = function(node, model) {
 		var elem = jQuery(node),
+		    pk = 1,
 		    sourcesWrap = elem.find('.sources_wrap'),
 		    sourceModel = new app.models.Source(),
-		    sourceNode = app.render('source', { pk: 0 }),
+		    sourceNode = app.render('source', { pk: pk++ }),
 		    sourceView = app.views.source(sourceNode, sourceModel);
 		
 		elem
 		.on('click', 'button', function (e) {
 			var sourceModel = new app.models.Source();
 			    sourceNode = app.render('source', {
-			    	pk: app.data.sources.length
+			    	pk: pk++
 			    }),
 			    sourceView = app.views.source(sourceNode, sourceModel);
 			
@@ -44,9 +49,20 @@
 			    name = e.target.getAttribute('data-prop') || e.target.name,
 			    value = parseFloat(e.target.value);
 			
-			console.log(elem, model, name, value);
-			
 			model.set(name, value);
+		})
+		.on('click', '[href="#remove"]', function(e) {
+			var elem = jQuery(e.target).closest('fieldset'),
+			    model = elem.data('model');
+			
+			// Destroy source
+			model.off();
+			elem.remove();
+			
+			var i = app.data.sources.indexOf(model);
+			
+			app.data.sources.splice(i,1);
+			sendOutputs(app.data.sources.map(getOutput));
 		})
 		.append(sourceNode);
 		
