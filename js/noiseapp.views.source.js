@@ -32,8 +32,5 @@
 				distElem.addClass('hidden');
 			}
 		});
-		
-		// Immediately update the view 
-		model.trigger('output');
 	};
 })(jQuery, noiseApp, Model);

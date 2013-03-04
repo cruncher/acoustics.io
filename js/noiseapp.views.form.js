@@ -21,10 +21,6 @@
 		    	pk: 0
 		    });
 		
-		app.data.sources = [sourceModel];
-		app.views.source(sourceNode, sourceModel);
-		collectOutputs(app.data.sources, sourceModel, sendOutputs);
-		
 		elem
 		.on('click', 'button', function (e) {
 			var sourceModel = new app.models.Source();
@@ -52,5 +48,12 @@
 			
 			model.set(name, value);
 		});
+		
+		app.data.sources = [sourceModel];
+		app.views.source(sourceNode, sourceModel);
+		collectOutputs(app.data.sources, sourceModel, sendOutputs);
+		
+		// Immediately update the view 
+		sourceModel.trigger('output');
 	};
 })(jQuery, noiseApp, Model);
