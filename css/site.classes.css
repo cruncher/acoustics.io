@@ -224,7 +224,10 @@ input + .tabs_index {
 	background-color: #999999;
 }
 
-.remove_link {
+.remove_link,
+.remove_link:active,
+.remove_link:focus,
+.remove_link:visited {
 	font-size: 0.8em;
 	color: #CA2800;
 }

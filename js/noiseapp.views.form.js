@@ -19,16 +19,17 @@
 	
 	app.views.form = function(node, model) {
 		var elem = jQuery(node),
+		    pk = 1,
 		    sourcesWrap = elem.find('.sources_wrap'),
 		    sourceModel = new app.models.Source(),
-		    sourceNode = app.render('source', { pk: 0 }),
+		    sourceNode = app.render('source', { pk: pk++ }),
 		    sourceView = app.views.source(sourceNode, sourceModel);
 		
 		elem
 		.on('click', 'button', function (e) {
 			var sourceModel = new app.models.Source();
 			    sourceNode = app.render('source', {
-			    	pk: app.data.sources.length
+			    	pk: pk++
 			    }),
 			    sourceView = app.views.source(sourceNode, sourceModel);
 			
@@ -61,6 +62,7 @@
 			var i = app.data.sources.indexOf(model);
 			
 			app.data.sources.splice(i,1);
+			sendOutputs(app.data.sources.map(getOutput));
 		})
 		.append(sourceNode);
 		
