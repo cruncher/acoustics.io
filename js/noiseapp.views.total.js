@@ -4,8 +4,11 @@
 		
 		model.on('total', function(model) {
 			var value = model.get('total');
+			    str = Math.round(value) + ' dB';
 			
-			elem.html(Math.round(value) + ' dB');
+			str = str.replace('Infinity', '&#8734;');
+			
+			elem.html(str);
 		});
 		
 

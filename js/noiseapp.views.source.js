@@ -8,8 +8,12 @@
 			distreadout = elem.find('.dist_readout');
 		
 		model.on('output', function(model) {
-			var value = model.get('output');
-			output.html(Math.round(value) + ' dB');
+			var value = model.get('output'),
+			    str = Math.round(value) + ' dB';
+			
+			str = str.replace('Infinity', '&#8734;');
+			
+			output.html(str);
 		});
 		
 		model.on('level', function(model) {

@@ -5,6 +5,10 @@ body {
 	background-repeat: repeat-y;*/
 }
 
+a, a:visited {
+	color: #649FC9;
+}
+
 body > header {
 	height: 5em;
 	background-color: #c3d23b;

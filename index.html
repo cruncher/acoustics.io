@@ -20,8 +20,6 @@
 		Your browser does not support HTML5 so some elements on this page are simulated using JScript. Unfortunately your browser has JScript disabled. Please enable it in order to display this page.
 	</noscript>
 	<![endif]-->
-	<!-- Disable image toolbar in IE6 -->
-	<!--[if lte IE 6]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
 	
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -38,10 +36,6 @@
 	<link rel="stylesheet" href="fonts/icons/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
 	
-	<!--[if (lt IE 9)&(!IEMobile)]>
-	<link rel="stylesheet" href="sub/bolt/css/bolt.layout.32em.css" media="all" />
-	<link rel="stylesheet" href="sub/bolt/css/bolt.layout.48em.css" media="all" />
-	<![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie.css" /><![endif]-->
 	<!--[if IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie8.css" /><![endif]-->
 	<!--[if IE 7]><link rel="stylesheet" href="sub/bolt/css/bolt.ie7.css" /><![endif]-->
@@ -219,7 +213,7 @@
 	<script>
 		// Function.prototype.bind is the ES5 feature with by far the worst support. Use it
 		// to roughly detect ES5. http://kangax.github.com/es5-compat-table/
-		!Function.prototype.bind && document.write(unescape('%3Cscript src="res/es5-shim/es5-shim.min.js"%3E%3C/script%3E'));
+		!Function.prototype.bind && document.write(unescape('%3Cscript src="sub/bolt/res/es5-shim/es5-shim.min.js"%3E%3C/script%3E'));
 	</script>
 	<script src="sub/bolt/res/ios-orientationchange-fix/ios-orientationchange-fix.js"></script>
 	<script src="sub/bolt/js/jquery.js"></script>
