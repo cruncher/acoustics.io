@@ -44,5 +44,7 @@
 		model.trigger('level');
 		model.trigger('time');
 		model.trigger('distance');
+		
+		return elem;
 	};
 })(jQuery, noiseApp, Model);

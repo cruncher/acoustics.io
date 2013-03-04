@@ -17,27 +17,26 @@
 		var elem = jQuery(node),
 		    sourcesWrap = elem.find('.sources_wrap'),
 		    sourceModel = new app.models.Source(),
-		    sourceNode = app.render('source', {
-		    	pk: 0
-		    });
+		    sourceNode = app.render('source', { pk: 0 }),
+		    sourceView = app.views.source(sourceNode, sourceModel);
 		
 		elem
 		.on('click', 'button', function (e) {
 			var sourceModel = new app.models.Source();
 			    sourceNode = app.render('source', {
 			    	pk: app.data.sources.length
-			    });
+			    }),
+			    sourceView = app.views.source(sourceNode, sourceModel);
 			
 			app.data.sources.push(sourceModel);
-			app.views.source(sourceNode, sourceModel);
 			sourcesWrap.append(sourceNode);
 			collectOutputs(app.data.sources, sourceModel, sendOutputs);
+			sourceView.find('input').focus();
 			
 			e.preventDefault();
 		});
 		
 		sourcesWrap
-		.append(sourceNode)
 		.on('change', 'input, select', function(e) {
 			var elem = jQuery(e.target).closest('fieldset'),
 			    model = elem.data('model'),
@@ -47,10 +46,10 @@
 			console.log(elem, model, name, value);
 			
 			model.set(name, value);
-		});
+		})
+		.append(sourceNode);
 		
 		app.data.sources = [sourceModel];
-		app.views.source(sourceNode, sourceModel);
 		collectOutputs(app.data.sources, sourceModel, sendOutputs);
 	};
 })(jQuery, noiseApp, Model);

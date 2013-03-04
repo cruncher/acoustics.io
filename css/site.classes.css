@@ -255,6 +255,9 @@ input:checked + .radio_button:hover {
   background: #649FC9;
 }
 
+
+/* input */
+
 [type="text"] {
 	font-size: 1.4em;
 	line-height: 1.4em;
@@ -264,6 +267,19 @@ input:checked + .radio_button:hover {
 
 [type="range"] {
 	margin-top: 0.4em;
+}
+
+.name_input {
+	line-height: 2em;
+	font-size: 1.8em;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0;
+}
+
+.name_input:focus {
+	background-color: white;
+	border: 1px solid #999999;
 }
 
 
