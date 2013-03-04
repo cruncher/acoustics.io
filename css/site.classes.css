@@ -164,24 +164,20 @@ input + .tabs_index {
 	vertical-align: -1.4em;
 }
 
-.icon_thumb {
-	width: 1em;
-	padding-top: 1em;
-	margin-top: -0.5em;
-	
-	color: white;
-	background-color: rgb(99,108,112);
-	border-radius: 1em;
+.readout {
+
 }
 
 label {
 	position: relative;
 }
 
-label > .icon_thumb {
+label > .readout {
 	position: absolute;
 	right: 0;
-	top: 50%;
+	top: 0;
+	height: inherit;
+	line-height: inherit;
 }
 
 .tabs_index + label {
@@ -217,6 +213,18 @@ label > .icon_thumb {
 	
 	border: 0.2em solid #92aa20;
 	border-radius: 0.4em;
+}
+
+[data-icon] {
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	vertical-align: -1px;
+	color: #636C70;
+}
+
+[data-icon]:hover {
+	color: black;
+	text-decoration: none;
 }
 
 input:checked + .radio_button,
