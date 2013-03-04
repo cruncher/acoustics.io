@@ -4,7 +4,7 @@
 		    distElem = elem.find('.lp_dist'),
 		    output = elem.find('.source_output'),
 			levelreadout = elem.find('.level_readout'),
-			ontimereadout = elem.find('.ontime_readout')
+			ontimereadout = elem.find('.ontime_readout'),
 			distreadout = elem.find('.dist_readout');
 		
 		model.on('output', function(model) {
