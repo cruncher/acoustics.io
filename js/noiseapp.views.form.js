@@ -32,6 +32,7 @@
 			sourcesWrap.append(sourceNode);
 			collectOutputs(app.data.sources, sourceModel, sendOutputs);
 			sourceView.find('input').focus();
+			sourceModel.trigger('output');
 			
 			e.preventDefault();
 		});

@@ -59,26 +59,15 @@
 		<form class="sources_col col" data-view="form" data-data="form">
 			<div class="sources_wrap wrap">
 				<div class="6_col_wrap col_wrap wrap">
-					<div class="col">
+					<div class="sourcetitle_col col">
 						<h2 class="cap_title">Noise source</h2>
 					</div
 					
-					><div class="col">
-						
-					</div
-						
-					><div class="col">
-						
-					</div
-					
-					><div class="col">
+					><div class="env_col col">
 						<h2 class="cap_title">Site environment</h2>
 					</div
 						
-					><div class="col">
-					</div
-						
-					><div class="col">
+					><div class="output_col col">
 						<h2 class="cap_title">SPL Receptor</h2>
 					</div>
 				</div>
@@ -86,20 +75,18 @@
 				<fieldset class="source_fieldset 7_col_wrap col_wrap wrap" data-template="source">
 					<div class="name_col col">
 						<label for="name_{{pk}}">Name</label>
-						<input type="text" class="name_input" name="name" id="name_{{pk}}" />
+						<input type="text" class="name_input" name="name" value="Plant {{pk}}" id="name_{{pk}}" />
 					</div
 					
 					><div class="level_col col">
-						<label for="level_{{pk}}">
+						<label for="level_{{pk}}" data-tip="#plant_noise_level">
 							Noise level
 							<span class="level_readout readout"></span>
-							<a href="#plant_noise_level" data-icon="i"></a>
 						</label>
 						<input type="range" class="level_input" value="70" min="40" max="140" name="level" id="level_{{pk}}" />
 
-						<label>
+						<label data-tip="#ref_type">
 							Noise level type
-							<a href="#ref_type" data-icon="i"></a>
 						</label>
 
 						<ul class="tabs_index index">
@@ -116,39 +103,28 @@
 							</li>
 						</ul>
 						
-						<!--a class="icon_thumb thumb" href="#swl_spl" data-icon="i">Information</a-->
-						
-						<label class="lp_dist" for="levelref_{{pk}}">
-							Ref. distance
-							<a href="#ref_distance" data-icon="i"></a>
-						</label>
-
-						<input class="lp_dist" type="text" value="10" name="levelref" id="levelref_{{pk}}" />
-
+						<p class="lp_dist" for="levelref_{{pk}}" data-tip="#ref_distance">
+							at <input class="refdist_input lp_dist" type="text" value="10" name="levelref" id="levelref_{{pk}}" /> metres
+						</p>
 					</div
 					
 					><div class="time_col col">
-						<label for="ontime_{{pk}}">
+						<label for="ontime_{{pk}}" data-tip="#per_on_time">
 							On Time
 							<span class="ontime_readout readout"></span>
-							<a href="#per_on_time" data-icon="i"></a>
 						</label>
 						<input type="range" class="ontime_input" value="100" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
 					</div
 					
 					><div class="env_col col">
-						<label for="dist_{{pk}}">
+						<label for="dist_{{pk}}" data-tip="#distance">
 							Distance
-
 							<span class="dist_readout readout"></span>
-							<a href="#distance" data-icon="i"></a>
-
 						</label>
 						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
 
-						<label for="barrier_{{pk}}">
+						<label for="barrier_{{pk}}" data-tip="#barrier">
 							Barrier
-							<a href="#barrier" data-icon="i"></a>
 						</label>
 						
 						<ul class="tabs_index index">
@@ -176,7 +152,7 @@
 			</div>
 			
 			<ul class="actions_index index">
-				<li><button class="add_button" data-icon="+">Add source</button></li>
+				<li><button class="add_button">Add source</button></li>
 			</ul>
 		</form
 		
@@ -185,23 +161,17 @@
 
 			<p class="total_output" data-view="total" data-data="total">70 dB</p>
 			
-			<details>
-				<summary class="cap_title">About this result</summary>
-				
-				<div>
-					<p>
-						These calculations are based on the noise prediction methods contained in Annex F of BS 5228-1:2009. The calculations assume that the intervening ground is hard and uses the simple barrier attenuation method.<br/>
-						<br/>
-						Click 
-						<a href="http://goodhandacoustics.co.uk">here</a>
-						 for more guidance and information on how this all works
-						<br/>
-						<br/>
-					</p>
-
-				
-				</div>
-			</details>
+			<h2 class="cap_title">About this result</h2>
+			
+			<p>
+				These calculations are based on the noise prediction methods contained in Annex F of BS 5228-1:2009. The calculations assume that the intervening ground is hard and uses the simple barrier attenuation method.<br/>
+				<br/>
+				Click 
+				<a href="http://goodhandacoustics.co.uk">here</a>
+				for more guidance and information on how this all works
+				<br/>
+				<br/>
+			</p>
 
 			<h2 class="cap_title">I need a more help</h2>
 			<p>Get in touch with <a href="mailto:info@goodhandacoustics.co.uk">Goodhand Acoustics</a>.</p>
