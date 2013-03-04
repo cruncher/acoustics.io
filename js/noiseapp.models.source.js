@@ -3,33 +3,29 @@
 	
 	
 	var recFacade = false,
-	    srcFacade = false,
-	    swlBool = false,
-	    refDist = 10;
+	    srcFacade = false;
 	
 	
 	// Prototype Functions
 
 	
-
+	function distAttenuation(dist, refDist, swl_spl){
+	    var khVar
+		
+		if (swl_spl === 1) {
+			khVar = khLw(dist);
+		}
+		else if (swl_spl === 0){
+			khVar = kh(dist, refDist);
+		}
+		
+		return khVar
+	}
 	
 	function kbar(barLineOfSite){
 
-		var kbarvar;
-
-		switch (barLineOfSite) {
-			case 0:
-				kbarvar = 0;
-				break;
-			case 1:
-				kbarvar = 5;
-				break;
-			case 2:
-				kbarvar = 10;
-				break;
-		}
-		
-		return kbarvar;
+		return -barLineOfSite;
+	
 	}
 	
 	function kfac(srcFacade,recFacade){
@@ -87,66 +83,64 @@
 		
 		Model.call(this, data || {
 			level: 70,
+			levelref: 10,
+			leveltype: 0,
 			distance: 10,
 			barrier: 0,
 			time: 1
 	    }, url);
 		
-		var kpercOnTimeVar = kpercOnTime(this.get('time')),
-			kbarVar = kbar(this.get('barrier')),
+		var kpercOnTimeVar = kpercOnTime(this._data.time),
+			kbarVar = kbar(this._data.barrier),
 			kfacVar = kfac(srcFacade,recFacade),
-			khVar,
-			srcNoiseLvl = this.get('level');
+			khVar;
 		
-		distAttenuation(this.get('distance'), refDist);
+		khVar = distAttenuation(this._data.distance, this._data.levelref, this._data.leveltype);
 		recNoiseLevel(this);
 	
-		function recNoiseLevel(model){
-			model.set('output', srcNoiseLvl - attenuation());
+		function recNoiseLevel(sourcemodel){
+			sourcemodel.set('output', sourcemodel._data.level - attenuation());
 		}
 		
 		function attenuation(){
 			return khVar + kpercOnTimeVar + kbarVar + kfacVar;
 		}
-		
-		
-		function distAttenuation(dist, refDist){
-			if (swlBool) {
-				khVar = khLw(dist);
-			}
-			else {
-				khVar = kh(dist, refDist);
-			}
-		}
-		
-		
+				
 		this.on('level', function(sourcemodel){
-			if (debug) console.log(sourcemodel.get('level'));
+			if (debug) console.log(sourcemodel._data.level);
 			
-			srcNoiseLvl = sourcemodel.get('level');
 			recNoiseLevel(sourcemodel);
 		});
 		
 		this.on('distance', function(sourcemodel){
-			if (debug) console.log(sourcemodel.get('distance'));
+			if (debug) console.log(sourcemodel._data.distance);
 			
-			distAttenuation(sourcemodel.get('distance'),refDist);
+			khVar = distAttenuation(sourcemodel._data.distance,sourcemodel._data.levelref, sourcemodel._data.leveltype);
 			recNoiseLevel(sourcemodel);
 		});
 			
 		this.on('barrier', function(sourcemodel){
-			if (debug) console.log(sourcemodel.get('barrier'));
+			if (debug) console.log(sourcemodel._data.barrier);
 			
-			kbarVar = kbar(sourcemodel.get('barrier'));
+			kbarVar = kbar(sourcemodel._data.barrier);
 			recNoiseLevel(sourcemodel);
 		});
 		
 		this.on('time', function(sourcemodel){
-			if (debug) console.log(sourcemodel.get('time'));
+			if (debug) console.log(sourcemodel._data.time);
 			
-			kpercOnTimeVar = kpercOnTime(sourcemodel.get('time'));
+			kpercOnTimeVar = kpercOnTime(sourcemodel._data.time);
 			recNoiseLevel(sourcemodel);
 		});
+		
+		
+		this.on('leveltype', function(sourcemodel){
+			if (debug) console.log(sourcemodel._data.leveltype);
+			
+			khVar = distAttenuation(sourcemodel._data.distance,sourcemodel._data.levelref, sourcemodel._data.leveltype);
+			recNoiseLevel(sourcemodel);
+		});
+		
 	};
 	
 	SourceModel.prototype = Object.create(Model.prototype);
