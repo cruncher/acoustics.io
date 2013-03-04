@@ -90,7 +90,7 @@
 					
 					><div class="level_col col">
 						<label for="level_{{pk}}">
-							Level
+							Noise level
 							<span class="readout"></span>
 							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
 						</label>
@@ -138,9 +138,23 @@
 							Barrier Correction
 							<a class="icon_thumb thumb" href="#barrier" data-icon="i">Information</a>
 						</label>
-						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
-						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="1" />
-						<input type="radio" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="2" />
+						
+						<ul class="radio_index index">
+							<li>
+								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
+								<label class="radio_button button" for="barrier_{{pk}}_0">0 dB</label>
+							</li
+							
+							><li>
+								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
+								<label class="radio_button button" for="barrier_{{pk}}_0">-5 dB</label>
+							</li
+							
+							><li>
+								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
+								<label class="radio_button button" for="barrier_{{pk}}_0">-10 dB</label>
+							</li>
+						</ul>
 					</div
 					
 					><div class="col">
