@@ -29,7 +29,7 @@
 		
 		elem
 		.data('model', model)
-		.on('change', '[name="leveltype"]', function(e) {
+		.on('change', '[data-prop="leveltype"]', function(e) {
 			// Lp is 0, Lw is 1. We want to listen for when Lp is checked
 			if (e.currentTarget.value === "0" && e.currentTarget.checked) {
 				distElem.removeClass('hidden');
@@ -39,6 +39,7 @@
 			}
 		});
 		
+		// Update anything with a readout
 		model.trigger('output');
 		model.trigger('level');
 		model.trigger('time');
