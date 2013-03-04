@@ -70,6 +70,10 @@ footer > .site_wrap {
 	width: 25%;
 }
 
+.col_wrap > .time_col {
+	width: 20%;
+}
+
 .col_wrap > .env_col {
 	width: 25%;
 }

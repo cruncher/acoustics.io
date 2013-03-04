@@ -104,12 +104,12 @@
 
 						<ul class="tabs_index index">
 							<li>
-								<input type="radio" class="hidden" value="0" name="leveltype" id="leveltypep_{{pk}}" />
+								<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" />
 								<label class="radio_button button" for="leveltypep_{{pk}}">SPL (L<sub>P</sub>)</label>
 							</li
 							
 							><li>
-								<input type="radio" class="hidden" value="1" name="leveltype" id="leveltypew_{{pk}}" />
+								<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
 								<label class="radio_button button" for="leveltypew_{{pk}}" checked>SWL (L<sub>W</sub>)</label>
 							</li>
 						</ul>
@@ -123,7 +123,7 @@
 						<input class="lp_dist hidden" type="text" value="" name="levelref" id="levelref_{{pk}}" />
 					</div
 					
-					><div class="col">
+					><div class="time_col col">
 						<label for="ontime_{{pk}}">
 							On Time
 							<span class="ontime_readout readout"></span>
@@ -149,17 +149,17 @@
 						
 						<ul class="tabs_index index">
 							<li>
-								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
+								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
 								<label class="radio_button button" for="barrier_{{pk}}_0">0 dB</label>
 							</li
 							
 							><li>
-								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
+								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
 								<label class="radio_button button" for="barrier_{{pk}}_1">-5 dB</label>
 							</li
 							
 							><li>
-								<input type="radio" class="hidden" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
+								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
 								<label class="radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
 							</li>
 						</ul>

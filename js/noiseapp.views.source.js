@@ -38,5 +38,10 @@
 				distElem.addClass('hidden');
 			}
 		});
+		
+		model.trigger('output');
+		model.trigger('level');
+		model.trigger('time');
+		model.trigger('distance');
 	};
 })(jQuery, noiseApp, Model);

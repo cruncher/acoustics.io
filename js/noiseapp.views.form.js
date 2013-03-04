@@ -41,7 +41,7 @@
 		.on('change', 'input, select', function(e) {
 			var elem = jQuery(e.target).closest('fieldset'),
 			    model = elem.data('model'),
-			    name = e.target.name,
+			    name = e.target.getAttribute('data-prop') || e.target.name,
 			    value = parseFloat(e.target.value);
 			
 			console.log(elem, model, name, value);
@@ -52,8 +52,5 @@
 		app.data.sources = [sourceModel];
 		app.views.source(sourceNode, sourceModel);
 		collectOutputs(app.data.sources, sourceModel, sendOutputs);
-		
-		// Immediately update the view 
-		sourceModel.trigger('output');
 	};
 })(jQuery, noiseApp, Model);
