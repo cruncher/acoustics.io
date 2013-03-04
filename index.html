@@ -83,7 +83,7 @@
 							Noise level
 							<span class="level_readout readout"></span>
 						</label>
-						<input type="range" class="level_input" value="70" min="40" max="140" name="level" id="level_{{pk}}" />
+						<input type="range" class="level_input" value="70" min="40" max="140" name="level" id="level_{{pk}}"/>
 
 						<label data-tip="#ref_type">
 							Noise level type
@@ -91,21 +91,21 @@
 
 						<ul class="tabs_index index">
 							<li>
-
-								<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" checked />
-								<label class="radio_button button" for="leveltypep_{{pk}}">SPL</label>
+								<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
+								<label class="first radio_button button" for="leveltypew_{{pk}}">SWL</label>
 							</li
 							
 							><li>
-								<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
-								<label class="radio_button button" for="leveltypew_{{pk}}" checked>SWL</label>
-
+								<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" checked />
+								<label class="last radio_button button" for="leveltypep_{{pk}}">SPL</label>
+							</li
+							
+							><li class="lp_dist">
+								<label for="levelref_{{pk}}">at</label>
+								<input class=" refdist_input" type="text" value="10" name="levelref" id="levelref_{{pk}}" />
+								<label for="levelref_{{pk}}" data-tip="#ref_distance">m</label>
 							</li>
 						</ul>
-						
-						<p class="lp_dist" for="levelref_{{pk}}" data-tip="#ref_distance">
-							at <input class="refdist_input lp_dist" type="text" value="10" name="levelref" id="levelref_{{pk}}" /> metres
-						</p>
 					</div
 					
 					><div class="time_col col">
@@ -130,7 +130,7 @@
 						<ul class="tabs_index index">
 							<li>
 								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
-								<label class="radio_button button" for="barrier_{{pk}}_0">0 dB</label>
+								<label class="first radio_button button" for="barrier_{{pk}}_0">0 dB</label>
 							</li
 							
 							><li>
@@ -140,7 +140,7 @@
 							
 							><li>
 								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
-								<label class="radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
+								<label class="last radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
 							</li>
 						</ul>
 					</div
@@ -152,7 +152,7 @@
 			</div>
 			
 			<ul class="actions_index index">
-				<li><button class="add_button">Add source</button></li>
+				<li><button class="add_button">Add noise source</button></li>
 			</ul>
 		</form
 		
@@ -203,10 +203,16 @@
 	
 	<footer>
 		<div class="site_wrap wrap">
-			Acoustics by
-			<a class="ga_logo_thumb logo_thumb thumb" href="http://goodhandacoustics.co.uk">Goodhand Acoustics</a> 
-			Website by
-			<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
+			<ul class="logo_index index">
+				<li>
+					Acoustics by
+					<a class="ga_logo_thumb logo_thumb thumb" href="http://goodhandacoustics.co.uk">Goodhand Acoustics</a> 
+				</li
+				
+				><li>
+					Website by
+					<a class="cr_logo_thumb logo_thumb thumb" href="http://cruncher.ch">Cruncher</a>
+				</li>
 		</div>
 	</footer>
 	

@@ -29,9 +29,9 @@ body > img {
 body > footer {
 	height: 14em;
 	background-color: #2b3134;
-	color: #8b969b;
+	color: #deddd6;
 	margin-bottom: 0;
-	padding-top: 5em;
+	padding-top: 8em;
 }
 
 footer > .site_wrap {
@@ -62,13 +62,13 @@ footer > .site_wrap {
 	margin-left: 3em;
 }
 
-.col_wrap > .sourcetitle_col { width: 60%; }
+.col_wrap > .sourcetitle_col { width: 60.5%; }
 
-.col_wrap > .name_col   { width: 20%; }
-.col_wrap > .level_col  { width: 20%; }
-.col_wrap > .time_col   { width: 20%; }
-.col_wrap > .env_col    { width: 20%; }
-.col_wrap > .output_col { width: 20%; }
+.col_wrap > .name_col   { width: 18.5%; }
+.col_wrap > .level_col  { width: 21%; }
+.col_wrap > .time_col   { width: 21%; }
+.col_wrap > .env_col    { width: 21%; }
+.col_wrap > .output_col { width: 18.5%; }
 
 .sources_col > .source_fieldset {
 	margin-bottom: 0.4em;
@@ -101,6 +101,45 @@ label {
 
 /* .index */
 
+/* .index classes with horizontal layout.
+		
+	 Simulate a bunch of blocks pushed against each other horizontally
+	 by using inline-block layout to create a horizontal effect. Because
+	 they're in the flow, children must have no space between them in
+	 the html.
+*/
+
+.logo_index {
+	/* To form grids with a horizontal index, line-height
+	   needs to be smaller than the items in the index. */
+	line-height: 0;
+}
+
+.logo_index > li {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.logo_index > li:last-child {
+	margin-right: 0;
+}
+
+.logo_index > li.last {
+	margin-right: 0;
+}
+
+
+.logo_index > li {
+	margin-right: 3em;
+	text-align: left;
+}
+
+.logo_index > li > .logo_thumb {
+	vertical-align: 0em;
+	margin-top: -1.1em;
+	margin-left: 0.8em;
+}
+
 .actions_index {
 	margin-top: 2em;
 }
@@ -120,7 +159,7 @@ label {
           border-radius: 0;
 }
 
-.tabs_index > li:first-child > .button {
+.tabs_index > li > .button.first {
    border-left-width: 1px;
    
   -webkit-border-top-left-radius: 9px;
@@ -133,7 +172,7 @@ label {
           border-bottom-left-radius: 9px;
 }
 
-.tabs_index > li:last-child > .button:last-child {
+.tabs_index > li > .button.last {
   -webkit-border-bottom-right-radius: 9px;
      -moz-border-radius-topright: 9px;
        -o-border-bottom-right-radius: 9px;
@@ -144,20 +183,29 @@ label {
           border-top-right-radius: 9px;
 }
 
+.tabs_index > li.lp_dist {
+	margin-left: 0.4em;
+}
+
 input + .tabs_index {
 	margin-top: 0.8em;
 }
 
 .logo_thumb {
-	margin-left: 1.4em;
-	margin-right: 1.4em;
+	background-size: contain;
+	background-position: 0 50%;
 }
 
 .cr_logo_thumb {
 	width: 13.3333em;
-	padding-top: 4.4333em;
-	background-image: url('http://cruncher.ch/static/images/logotype_400x133.png');
-	vertical-align: -1.4em;
+	padding-top: 3.4667em;
+	background-image: url('../images/logo_cr.png');
+}
+
+.ga_logo_thumb {
+	width: 13.3333em;
+	padding-top: 3.4667em;
+	background-image: url('../images/logo_ga.png');
 }
 
 .readout {
@@ -244,6 +292,7 @@ input:checked + .radio_button:hover {
 }
 
 
+
 /* input */
 
 [type="text"] {
@@ -275,6 +324,22 @@ input:checked + .radio_button:hover {
 	width: 3em;
 }
 
+.lp_dist > input,
+.lp_dist > label {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.lp_dist > label {
+	width:  auto;
+}
+
+.lp_dist > input {
+	width: 2.5em;
+	height: 2.4em;
+	font-size: 0.8em;
+	text-align: center;
+}
 
 /* .tip */
 
