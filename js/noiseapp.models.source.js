@@ -78,7 +78,7 @@
 
 	function kpercOnTime(p){
 
-		return 10*acfns.log10(1/p);
+		return 10*acfns.log10(100/p);
 
 	}
 	

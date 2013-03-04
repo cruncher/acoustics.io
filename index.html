@@ -91,7 +91,7 @@
 					><div class="level_col col">
 						<label for="level_{{pk}}">
 							Level
-							<span class="readout"></span>
+							<span class="level_readout readout"></span>
 							<a class="icon_thumb thumb" href="#plant_noise_level" data-icon="i">Information</a>
 						</label>
 						<input type="range" class="level_input" value="60" min="20" max="120" name="level" id="level_{{pk}}" />
@@ -120,10 +120,10 @@
 					><div class="col">
 						<label for="ontime_{{pk}}">
 							% On Time
-							<span class="readout"></span>
+							<span class="ontime_readout readout"></span>
 							<a class="icon_thumb thumb" href="#per_on_time" data-icon="i">Information</a>
 						</label>
-						<input type="range" class="ontime_input" value="1" min="0" max="1" step="0.01" name="time" id="time_{{pk}}" />
+						<input type="range" class="ontime_input" value="1" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
 					</div
 					
 					><div class="env_col col">
