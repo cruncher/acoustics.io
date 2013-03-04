@@ -184,6 +184,10 @@ label > .readout {
 	margin-top: 0.8em;
 }
 
+label + .tabs_index {
+	margin-top: 0.4em;
+}
+
 
 
 /* .button */
