@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.col.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" />
 	<link rel="stylesheet" href="css/site.classes.css" />
+	<link rel="stylesheet" href="css/site.classes.block.css" />
 	<link rel="stylesheet" href="fonts/icons/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
 	
@@ -50,97 +51,99 @@
 	</header>
 	
 	<div class="app_wrap site_wrap wrap">
-		<form class="sources_col col" data-view="form" data-data="form">
+		<form class="sources_block block" data-view="form" data-data="form">
 			<div class="sources_wrap wrap">
 				<div class="6_col_wrap col_wrap wrap">
-					<div class="sourcetitle_col col">
+					<div class="sourcetitle_block block">
 						<h2 class="cap_title">Noise source</h2>
 					</div
 					
-					><div class="env_col col">
+					><div class="env_block block">
 						<h2 class="cap_title">Site environment</h2>
 					</div
 						
-					><div class="output_col col">
+					><div class="output_block block">
 						<h2 class="cap_title">SPL at Receptor</h2>
 					</div>
 				</div>
 				
-				<fieldset class="source_fieldset 7_col_wrap col_wrap wrap" data-template="source">
-					<div class="name_col col">
+				<fieldset class="source_block" data-template="source">
+					<div class="name_block block">
 						<label for="name_{{pk}}">Name</label>
 						<input type="text" class="name_input" name="name" value="Plant {{pk}}" id="name_{{pk}}" />
 						<a class="remove_link remove_link_{{pk}}" href="#remove">Remove</a>
 					</div
 					
-					><div class="level_col col">
-						<label for="level_{{pk}}" data-tip="#plant_noise_level">
-							Noise level
-							<span class="level_readout readout"></span>
-						</label>
-						<input type="range" class="level_input" value="70" min="40" max="140" name="level" id="level_{{pk}}"/>
-
-						<label data-tip="#ref_type">
-							Noise level type
-						</label>
-
-						<ul class="tabs_index index">
-							<li>
-								<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
-								<label class="first radio_button button" for="leveltypew_{{pk}}">SWL</label>
-							</li
-							
-							><li>
-								<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" checked />
-								<label class="last radio_button button" for="leveltypep_{{pk}}">SPL</label>
-							</li
-							
-							><li class="lp_dist">
-								<label for="levelref_{{pk}}">at</label>
-								<input class=" refdist_input" type="text" value="10" name="levelref" id="levelref_{{pk}}" />
-								<label for="levelref_{{pk}}" data-tip="#ref_distance">m</label>
-							</li>
-						</ul>
-					</div
-					
-					><div class="time_col col">
-						<label for="ontime_{{pk}}" data-tip="#per_on_time">
-							On Time
-							<span class="ontime_readout readout"></span>
-						</label>
-						<input type="range" class="ontime_input" value="100" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
-					</div
-					
-					><div class="env_col col">
-						<label for="dist_{{pk}}" data-tip="#distance">
-							Distance
-							<span class="dist_readout readout"></span>
-						</label>
-						<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
-
-						<label for="barrier_{{pk}}" data-tip="#barrier">
-							Barrier correction
-						</label>
+					><div class="data_block block">
+						<div class="level_block block">
+							<label for="level_{{pk}}" data-tip="#plant_noise_level">
+								Noise level
+								<span class="level_readout readout"></span>
+							</label>
+							<input type="range" class="level_input" value="70" min="40" max="140" name="level" id="level_{{pk}}"/>
+	
+							<label data-tip="#ref_type">
+								Noise level type
+							</label>
+	
+							<ul class="tabs_index index">
+								<li>
+									<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
+									<label class="first radio_button button" for="leveltypew_{{pk}}">SWL</label>
+								</li
+								
+								><li>
+									<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" checked />
+									<label class="last radio_button button" for="leveltypep_{{pk}}">SPL</label>
+								</li
+								
+								><li class="lp_dist">
+									<label for="levelref_{{pk}}">at</label>
+									<input class=" refdist_input" type="text" value="10" name="levelref" id="levelref_{{pk}}" />
+									<label for="levelref_{{pk}}" data-tip="#ref_distance">m</label>
+								</li>
+							</ul>
+						</div
 						
-						<ul class="tabs_index index">
-							<li>
-								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
-								<label class="first radio_button button" for="barrier_{{pk}}_0">0 dB</label>
-							</li
+						><div class="time_block block">
+							<label for="ontime_{{pk}}" data-tip="#per_on_time">
+								On Time
+								<span class="ontime_readout readout"></span>
+							</label>
+							<input type="range" class="ontime_input" value="100" min="0" max="100" step="1" name="time" id="time_{{pk}}" />
+						</div
+						
+						><div class="env_block block">
+							<label for="dist_{{pk}}" data-tip="#distance">
+								Distance
+								<span class="dist_readout readout"></span>
+							</label>
+							<input type="range" class="dist_input" value="10" min="1" max="150" step="1" name="distance" id="dist_{{pk}}" />
+	
+							<label for="barrier_{{pk}}" data-tip="#barrier">
+								Barrier correction
+							</label>
 							
-							><li>
-								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
-								<label class="radio_button button" for="barrier_{{pk}}_1">-5 dB</label>
-							</li
-							
-							><li>
-								<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
-								<label class="last radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
-							</li>
-						</ul>
+							<ul class="tabs_index index">
+								<li>
+									<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
+									<label class="first radio_button button" for="barrier_{{pk}}_0">0 dB</label>
+								</li
+								
+								><li>
+									<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_1" value="-5" />
+									<label class="radio_button button" for="barrier_{{pk}}_1">-5 dB</label>
+								</li
+								
+								><li>
+									<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_2" value="-10" />
+									<label class="last radio_button button" for="barrier_{{pk}}_2">-10 dB</label>
+								</li>
+							</ul>
+						</div>
 					</div
 					
-					><div class="output_col col">
+					><div class="output_block block">
 						<div class="source_output"></div>
 					</div>
 				</fieldset>
@@ -151,7 +154,7 @@
 			</ul>
 		</form
 		
-		><div class="total_col col">
+		><div class="total_block block">
 			<h2 class="cap_title">Total SPL at Receptor</h2>
 
 			<p class="total_output" data-view="total" data-data="total">70 dB</p>

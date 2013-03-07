@@ -1,0 +1,91 @@
+.block {
+	position: relative;
+	display: block;
+}
+
+.source_block > .output_block {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+@media all and (min-width: 40em) {
+	.sources_block,
+	.total_block {
+		/* This inline-block method produces nice flow, and with a bit of
+		   head scratching can be used for liquid columns with fixed gutters,
+		   or even mixed fixed and liquid columns, all with arbitrary content
+		   order. However, it is a little susceptible to rounding errors, and
+		   requires spaceless html. */
+		display: inline-block;
+		vertical-align: top;
+		
+		/* For those pour souls who don't understand inline-block (IE7). */
+		display: inline !IE7;
+		
+		/* Stop content pushing column wider than it should be */
+		overflow: visible;
+		width: 100%;
+	}
+	
+	.block:first-child {
+		margin-left: 0;
+	}
+	
+	.block:last-child {
+		margin-right: 0;
+	}
+
+	.sources_block {
+		/* 7/9 column */
+		width: 78%;
+		margin-right: -78%;
+	}
+	
+	.total_block {
+		/* 2/9 column */
+		width: 22%;
+		margin-right: -22%;
+		left: 78%;
+		margin-left: 3em;
+	}
+}
+
+@media all and (min-width: 60em) {
+	.level_block,
+	.time_block,
+	.env_block {
+		/* This inline-block method produces nice flow, and with a bit of
+		   head scratching can be used for liquid columns with fixed gutters,
+		   or even mixed fixed and liquid columns, all with arbitrary content
+		   order. However, it is a little susceptible to rounding errors, and
+		   requires spaceless html. */
+		display: inline-block;
+		vertical-align: top;
+		
+		/* For those pour souls who don't understand inline-block (IE7). */
+		display: inline !IE7;
+		
+		/* Stop content pushing column wider than it should be */
+		overflow: visible;
+		width: 100%;
+	}
+
+	.app_wrap {
+		padding-right: 3em;
+	}
+
+	.sourcetitle_block { width: 60.5%; }
+	
+	.name_block   { width: 18.5%; }
+	.output_block { width: 18.5%; }
+	.level_block  { width: 21%; }
+	.time_block   { width: 21%; }
+	.env_block    { width: 21%; }
+
+	.source_block > .output_block {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+}
