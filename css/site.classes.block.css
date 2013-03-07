@@ -1,6 +1,19 @@
+.site_wrap {
+	margin-left: 2em;
+	margin-right: 2em;
+	width: auto;
+}
+
 .block {
 	position: relative;
 	display: block;
+}
+
+.data_block {
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-left: -1em;
+	margin-right: -1em;
 }
 
 .source_block > .output_block {
@@ -9,7 +22,9 @@
 	right: 0;
 }
 
-@media all and (min-width: 40em) {
+
+
+@media all and (min-width: 38.4375em) {
 	.sources_block,
 	.total_block {
 		/* This inline-block method produces nice flow, and with a bit of
@@ -36,22 +51,31 @@
 		margin-right: 0;
 	}
 
+	.site_wrap {
+		margin-left: 3em;
+		margin-right: 3em;
+	}
+
+	.app_wrap {
+		padding-right: 19em;
+	}
+
 	.sources_block {
 		/* 7/9 column */
-		width: 78%;
-		margin-right: -78%;
+		width: 100%;
+		margin-right: -100%;
 	}
 	
 	.total_block {
 		/* 2/9 column */
-		width: 22%;
-		margin-right: -22%;
-		left: 78%;
+		width: 16em;
+		margin-right: -16em;
+		left: 100%;
 		margin-left: 3em;
 	}
 }
 
-@media all and (min-width: 60em) {
+@media all and (min-width: 56em) {
 	.level_block,
 	.time_block,
 	.env_block {
@@ -71,10 +95,6 @@
 		width: 100%;
 	}
 
-	.app_wrap {
-		padding-right: 3em;
-	}
-
 	.sourcetitle_block { width: 60.5%; }
 	
 	.name_block   { width: 18.5%; }
@@ -82,10 +102,4 @@
 	.level_block  { width: 21%; }
 	.time_block   { width: 21%; }
 	.env_block    { width: 21%; }
-
-	.source_block > .output_block {
-		position: relative;
-		top: auto;
-		right: auto;
-	}
 }
