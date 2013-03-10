@@ -1,0 +1,130 @@
+.site_wrap {
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	width: auto;
+	max-width: 65.625em;
+}
+
+.block {
+	position: relative;
+	display: block;
+}
+
+.data_block {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.data_block > .block {
+	margin-top: 1.2em;
+}
+
+.data_block > .block:first-child {
+	margin-top: 0;
+}
+
+.name_block {
+	width: 66.6667%;
+	padding-left: 1em;
+}
+
+.output_block {
+	width: 33.3333%;
+	padding-right: 1em;
+}
+
+.source_block > .output_block {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.source_block > .remove_link {
+	position: absolute;
+	display: none;
+}
+
+
+	.sources_block,
+	.total_block {
+		/* This inline-block method produces nice flow, and with a bit of
+		   head scratching can be used for liquid columns with fixed gutters,
+		   or even mixed fixed and liquid columns, all with arbitrary content
+		   order. However, it is a little susceptible to rounding errors, and
+		   requires spaceless html. */
+		display: inline-block;
+		vertical-align: top;
+		
+		/* For those pour souls who don't understand inline-block (IE7). */
+		display: inline !IE7;
+		
+		/* Stop content pushing column wider than it should be */
+		overflow: visible;
+		width: 100%;
+	}
+	
+	.block:first-child {
+		margin-left: 0;
+	}
+	
+	.block:last-child {
+		margin-right: 0;
+	}
+
+	.site_wrap {
+		margin-left: 1.6em;
+		margin-right: 1.6em;
+	}
+
+	.app_wrap {
+		padding-right: 18em;
+	}
+
+	.sources_block {
+		/* 7/9 column */
+		width: 100%;
+		margin-right: -100%;
+	}
+	
+	.total_block {
+		/* 2/9 column */
+		width: 16em;
+		margin-right: -16em;
+		left: 100%;
+		margin-left: 2em;
+	}
+
+
+	.site_wrap {
+		width: 92%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.level_block,
+	.time_block,
+	.env_block {
+		/* This inline-block method produces nice flow, and with a bit of
+		   head scratching can be used for liquid columns with fixed gutters,
+		   or even mixed fixed and liquid columns, all with arbitrary content
+		   order. However, it is a little susceptible to rounding errors, and
+		   requires spaceless html. */
+		display: inline-block;
+		vertical-align: top;
+		
+		/* For those pour souls who don't understand inline-block (IE7). */
+		display: inline !IE7;
+		
+		/* Stop content pushing column wider than it should be */
+		overflow: visible;
+		width: 100%;
+	}
+
+	.sourcetitle_block { width: 60.5%; }
+	
+	.data_block   { padding-right: 3em; }
+	.data_block > .block { margin-top: 0; }
+	
+	.level_block  { width: 33.3333%; margin-right: -33.3333%; left: 0;        margin-left: 0; }
+	.time_block   { width: 33.3333%; margin-right: -33.3333%; left: 33.3333%; margin-left: 1em; }
+	.env_block    { width: 33.3333%; margin-right: -33.3333%; left: 66.6667%; margin-left: 1em; }

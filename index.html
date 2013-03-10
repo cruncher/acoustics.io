@@ -27,17 +27,20 @@
 	<link rel="stylesheet" href="sub/app/css/app.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.normalise.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.typography.css" />
-	<link rel="stylesheet" href="sub/bolt/css/bolt.typography.15_20.css" />
+	<link rel="stylesheet" href="sub/bolt/css/bolt.typography.15_21.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.forms.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.css" />
 	<link rel="stylesheet" href="sub/bolt/css/bolt.classes.col.css" />
-	<link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" />
+	<!--link rel="stylesheet" href="sub/bolt/css/bolt.theme.css" /-->
 	<link rel="stylesheet" href="css/site.classes.css" />
 	<link rel="stylesheet" href="css/site.classes.block.css" />
 	<link rel="stylesheet" href="fonts/icons/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Happy+Monkey|Comfortaa|Cherry+Swash' rel='stylesheet' type='text/css'>
 	
-	<!--[if lte IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie.css" /><![endif]-->
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" href="sub/bolt/css/bolt.ie.css" />
+		<link rel="stylesheet" href="css/site.classes.block_ie8.css" />
+	<![endif]-->
 	<!--[if IE 8]><link rel="stylesheet" href="sub/bolt/css/bolt.ie8.css" /><![endif]-->
 	<!--[if IE 7]><link rel="stylesheet" href="sub/bolt/css/bolt.ie7.css" /><![endif]-->
 	<!--[if IE 6]><link rel="stylesheet" href="sub/bolt/css/bolt.ie6.css" /><![endif]-->
@@ -85,7 +88,7 @@
 								Noise level type
 							</label>
 	
-							<ul class="tabs_index index">
+							<ul class="tabs_index index" data-tip="#ref_type">
 								<li>
 									<input type="radio" class="hidden" value="1" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypew_{{pk}}" />
 									<label class="first radio_button button" for="leveltypew_{{pk}}">SWL</label>
@@ -93,13 +96,7 @@
 								
 								><li>
 									<input type="radio" class="hidden" value="0" data-prop="leveltype" name="leveltype_{{pk}}" id="leveltypep_{{pk}}" checked />
-									<label class="last radio_button button" for="leveltypep_{{pk}}">SPL</label>
-								</li
-								
-								><li class="lp_dist">
-									<label for="levelref_{{pk}}">at</label>
-									<input class=" refdist_input" type="text" value="10" name="levelref" id="levelref_{{pk}}" />
-									<label for="levelref_{{pk}}" data-tip="#ref_distance">m</label>
+									<label class="last radio_button button" for="leveltypep_{{pk}}">SPL <span>at <input class="refdist_input" type="text" value="10" name="levelref" id="levelref_{{pk}}" /> m</span></label>
 								</li>
 							</ul>
 						</div
@@ -123,7 +120,7 @@
 								Barrier attenuation
 							</label>
 							
-							<ul class="tabs_index index">
+							<ul class="tabs_index index" data-tip="#barrier">
 								<li>
 									<input type="radio" class="hidden" data-prop="barrier" name="barrier_{{pk}}" id="barrier_{{pk}}_0" value="0" checked />
 									<label class="first radio_button button" for="barrier_{{pk}}_0">0 dB</label>
@@ -176,24 +173,28 @@
 		</div>
 	</div>
 
-	
+	<div class="top_tip tip" id="plant_noise_level">
+		Noise level of plant.
+	</div>
 	<div class="top_tip tip" id="ref_type">
-		The plant noise level is either a sound power level (SWL) or sound pressure level (SPL). If you measured it on site then it is likely to be a sound pressure level.
+		<p>
+			Noise level is either a sound power level (SWL) or sound pressure level (SPL).
+			If noise level was measured on site it is likely a sound pressure level.
+			Enter the distance it was measured at.
+		</p>
 	</div>
 	<div class="top_tip tip" id="ref_distance">
-		The distance that you were from the plant when you measured the noise level. You will have to click somewhere else to see the result change.
-	</div>
-	<div class="top_tip tip" id="plant_noise_level">
-		The noise level of the plant. Duh.
+		Distance from plant that the sound pressure level was measured.
 	</div>
 	<div class="top_tip tip" id="per_on_time">
-		The percentage of the day that the plant will operate for. i.e. for a 10-hour day, 10% represents 1 hour.
+		Percentage of the day the plant operates. For a 10-hour day, 10% represents 1 hour.
 	</div>
 	<div class="top_tip tip" id="distance">
-		The distance from the source (your piece of construction plant) to the receptor (i.e. the residential property)
+		Distance from plant to receptor, in metres.
 	</div>
 	<div class="top_tip tip" id="barrier">
-		A correction on the noise level due to any barriers. See "About this result" for more information.
+		<p>Attenuation of noise due to barriers.</p>
+		<p>If the noise source is visible from the receptor there is no attenuation, while a barrier that completely obscures line-of-sight is assumed to cause an attenuation of -10dB.</p>
 	</div>
 
 	
