@@ -49,6 +49,16 @@
 		
 		return {totpow:totpow, totnum:totnum};
 	}
+
+	
+	function calcHeat(dBValue, dBMax){
+	
+		return (pow(10,dBValue/10))/(pow(10,dBMax/10))
+	
+	}
+	
+	
+	
 	
 	window.acfns={
 		log10: log10,
