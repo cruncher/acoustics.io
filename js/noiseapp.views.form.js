@@ -33,23 +33,31 @@
 		});
 	}
 
+	function createSource(pk) {
+		var sourceModel = new app.models.Source(),
+		    sourceNode = app.render('source', { pk: pk }),
+		    sourceView = app.views.source(sourceNode, sourceModel);
+		
+		app.data.sources.push(sourceModel);
+		collectOutputs(app.data.sources, sourceModel, sendOutputs);
+		
+		return sourceNode;
+	}
+
 	app.views.form = function(node, model) {
 		var elem = jQuery(node),
 		    pk = 1,
 		    sourcesWrap = elem.find('.sources_wrap'),
-		    sourceModel = new app.models.Source(),
-		    sourceNode = app.render('source', { pk: pk++ }),
-		    sourceView = app.views.source(sourceNode, sourceModel);
+		    className, sourceNode;
+		
+		app.data.sources = [];
+		sourceNode = createSource(pk++);
+		className = 'sources_' + app.data.sources.length;
 		
 		elem
-		.on('click', 'button', function (e) {
-			var sourceModel = new app.models.Source();
-			    sourceNode = app.render('source', {
-			    	pk: pk++
-			    }),
-			    sourceView = app.views.source(sourceNode, sourceModel);
+		.on('click', '.add_button', function (e) {
+			var sourceNode = createSource(pk++);
 			
-			app.data.sources.push(sourceModel);
 			sourcesWrap.append(sourceNode);
 			
 			// Polyfill input[type="range"] with jQuery.skin
@@ -57,9 +65,11 @@
 				skinInputs(sourceNode);
 			}
 			
-			collectOutputs(app.data.sources, sourceModel, sendOutputs);
-			sourceView.find('input').focus();
-			sourceModel.trigger('output');
+			sourcesWrap.removeClass(className);
+			className = 'sources_' + app.data.sources.length;
+			sourcesWrap.addClass(className);
+			jQuery('input', sourceNode).eq(0).focus();
+			app.data.sources[app.data.sources.length - 1].trigger('output');
 			
 			e.preventDefault();
 		});
@@ -84,17 +94,18 @@
 			var i = app.data.sources.indexOf(model);
 			
 			app.data.sources.splice(i,1);
+			sourcesWrap.removeClass(className);
+			className = 'sources_' + app.data.sources.length;
+			sourcesWrap.addClass(className);
 			sendOutputs(app.data.sources.map(getOutput));
 			e.preventDefault();
 		})
-		.append(sourceNode);
+		.append(sourceNode)
+		.addClass(className);
 		
 		// Polyfill input[type="range"] with jQuery.skin
 		if (jQuery.support.inputTypes.range === false) {
 			skinInputs(sourceNode);
 		}
-		
-		app.data.sources = [sourceModel];
-		collectOutputs(app.data.sources, sourceModel, sendOutputs);
 	};
 })(jQuery, noiseApp, Model);

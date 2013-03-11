@@ -24,7 +24,7 @@
 }
 
 .name_block {
-	width: 66.6667%;
+	width: 65%;
 	padding-left: 1em;
 }
 
@@ -38,12 +38,6 @@
 	top: 0;
 	right: 0;
 }
-
-.source_block > .remove_link {
-	position: absolute;
-	display: none;
-}
-
 
 @media all and (min-width: 34.875em) {
 	.sources_block,

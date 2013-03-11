@@ -5,7 +5,7 @@ body {
 	background-repeat: repeat-y;*/
 }
 
-a, a:visited {
+a {
 	color: #649FC9;
 }
 
@@ -19,7 +19,7 @@ body > header {
 }
 
 header h1 {
-	font-family: 'Happy Monkey', cursive;
+	font-family: 'Happy Monkey', Helvetica, Arial, sans-serif;
 	font-size: 1.8em;
 }
 
@@ -44,6 +44,16 @@ footer > .site_wrap {
 
 .sources_block > .source_block {
 	margin-bottom: 0.4em;
+}
+
+.sources_1 .remove_button {
+	display: none;
+}
+
+.source_block > .remove_button {
+	position: absolute;
+	top: 0.5em;
+	right: 9em;
 }
 
 .data_block {
@@ -189,14 +199,6 @@ input + .tabs_index {
 	background-color: #999999;
 }
 
-.remove_link,
-.remove_link:active,
-.remove_link:focus,
-.remove_link:visited {
-	font-size: 0.8em;
-	color: #CA2800;
-}
-
 .readout {
 
 }
@@ -260,6 +262,29 @@ label + .tabs_index {
 	color: white;
 }
 
+.remove_button {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	height: 2em;
+	text-decoration: underline;
+	color: #cc4a22;
+	border: 0.25em solid transparent;
+}
+
+.remove_button:hover,
+.remove_button:focus {
+	text-decoration: none;
+	color: white;
+	background-color: #cc4a22;
+	border-color: #aa3815;
+	border-radius: 0.5em;
+}
+/*
+.remove_button:before {
+	content: 'x';
+	margin-right: 0.5em;
+}
+*/
 .radio_button {
 	font-size: 0.9333em;
 	line-height: 2.1429em;
@@ -273,8 +298,18 @@ label + .tabs_index {
 	background-image:         linear-gradient(top, #cccccc, #bbbbbb);
 }
 
-.radio_button.on,
-.radio_button:hover {
+.radio_button:hover,
+.radio_button.focus {
+	background-color: #aaaaaa;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(silver), to(black));
+	background-image: -webkit-linear-gradient(top, #bbbbbb, #aaaaaa);
+	background-image:    -moz-linear-gradient(top, #bbbbbb, #aaaaaa);
+	background-image:     -ms-linear-gradient(top, #bbbbbb, #aaaaaa);
+	background-image:      -o-linear-gradient(top, #bbbbbb, #aaaaaa);
+	background-image:         linear-gradient(top, #bbbbbb, #aaaaaa);
+}
+
+.radio_button.on {
   color: white;
   text-shadow: 0 -1px rgba(0,0,0,0.5);
 
