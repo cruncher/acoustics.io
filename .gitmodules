@@ -4,3 +4,6 @@
 [submodule "sub/bolt"]
 	path = sub/bolt
 	url = git://github.com/stephband/bolt.git
+[submodule "sub/jquery.skin"]
+	path = sub/jquery.skin
+	url = git://github.com/stephband/jquery.skin.git
