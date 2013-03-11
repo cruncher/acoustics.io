@@ -223,7 +223,7 @@
 	<script src="sub/bolt/res/ios-orientationchange-fix/ios-orientationchange-fix.js"></script>
 	<script src="sub/bolt/js/jquery.js"></script>
 	<script src="sub/bolt/res/jquery.cookie/jquery.cookie.js"></script>
-	<script src="jquery.support.inputtypes"></script>
+	<script src="sub/bolt/js/jquery.support.inputtypes"></script>
 	<script src="sub/bolt/js/jquery.prefix.js"></script>
 	<script src="sub/bolt/js/jquery.event.tap.js"></script>
 	<script src="sub/bolt/js/jquery.event.activate.js"></script>
@@ -234,7 +234,7 @@
 	<script src="sub/bolt/js/bolt.tip.js"></script>
 	<script src="sub/bolt/js/bolt.input.js"></script>
 	<script src="sub/bolt/js/bolt.input.placeholder.js"></script>
-
+	
 	<script src="js/AcousticFunctions.js"></script>
 	<script src="sub/app/js/model.js"></script>
 	<script src="sub/app/js/app.js"></script>
@@ -246,7 +246,13 @@
 	<script src="js/noiseapp.views.form.js"></script>
 	
 	<script>
-		
+		jQuery(document).ready(function () {
+			console.log(jQuery.support.inputTypes.range);
+			if (!jQuery.support.inputTypes.range) {
+				jQuery('<script src="sub/jquery.skin/jquery.skin.js"/>')
+				.appendTo(document.body);
+			}
+		});
 	</script>
 	
 	<script>
