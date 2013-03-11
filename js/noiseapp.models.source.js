@@ -1,6 +1,5 @@
 (function(jQuery, app, Model, acfns, undefined){
-	var debug = true;
-	
+	var debug = false;//true;
 	
 	var recFacade = false,
 	    srcFacade = false;
@@ -67,9 +66,7 @@
 	}
 
 	function kh(r,d){
-		console.log(d, r, acfns.log10(r/d));
 		return 20*acfns.log10(r/d);
-
 	}
 
 	function kpercOnTime(p){

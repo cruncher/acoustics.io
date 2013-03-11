@@ -1,5 +1,5 @@
 (function(jQuery, app, Model, acfns, undefined){
-	var debug = true;
+	var debug = false;//true;
 	
 	// Class logic
 	
