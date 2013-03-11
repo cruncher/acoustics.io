@@ -22,9 +22,7 @@
 	}
 	
 	function kbar(barLineOfSite){
-
 		return -barLineOfSite;
-	
 	}
 	
 	function kfac(srcFacade,recFacade){
@@ -43,26 +41,20 @@
 	}
 	
 	function ksLw(r){
-
 		if (r>=25){
 			return 25*acfns.log10(r)+1;
 		}
 		else{
 			return khLw(r);
 		}
-
 	}
 
 	function khLw(r){
-
 		return 20*acfns.log10(r)+8;
-
 	}
 
 	function ks(r,d){
-
 		return 25*acfns.log10(r/d)-2;
-
 	}
 
 	function kh(r,d){
@@ -70,9 +62,7 @@
 	}
 
 	function kpercOnTime(p){
-
 		return 10*acfns.log10(100/p);
-
 	}
 	
 	function SourceModel(data, url) {
