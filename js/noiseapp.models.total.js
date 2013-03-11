@@ -7,10 +7,6 @@
 		var outputs = totalmodel.get('outputs');
 		
 		totalmodel.set('total', acfns.dBSum(outputs));
-		
-		
-		
-		console.log(outputs);
 	}
 	
 	function TotalModel(data, url) {
@@ -23,8 +19,6 @@
 		// Instance logic
 		
 		this.on('outputs', calcTotal);
-		
-		
 	};
 	
 	

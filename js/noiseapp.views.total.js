@@ -10,7 +10,5 @@
 			
 			elem.html(str);
 		});
-		
-
 	};
 })(noiseApp, Model);

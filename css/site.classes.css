@@ -338,8 +338,13 @@ label + .tabs_index {
 	border: 1px solid #666666;
 }
 
-[type="range"] + label {
-	margin-top: 0.9333em;
+[type="range"] + label,
+.x_skin_container + label {
+	margin-top: 1em;
+}
+
+.x_skin_container {
+	background-color: #cccccc;
 }
 
 .name_input,
@@ -357,6 +362,11 @@ label + .tabs_index {
 .name_input:focus {
 	background-color: white;
 	border: 1px solid #999999;
+}
+
+.x_skin_container {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 .source_output {
