@@ -266,6 +266,7 @@ label + .tabs_index {
 	font-size: 0.8em;
 	line-height: 1.5em;
 	height: 2em;
+	text-overflow: clip;
 	text-decoration: underline;
 	color: #cc4a22;
 	border: 0.25em solid transparent;
