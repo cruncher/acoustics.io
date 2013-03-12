@@ -8,11 +8,8 @@
 	}
 
 	function dBSum(n) {
-
-		console.log(arguments)
 		var dBObj = dBCalc(arguments);
 		return 10*log10(dBObj.totpow);
-
 	}
 
 	function dBAvg(n) {

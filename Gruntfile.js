@@ -59,7 +59,7 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
         },
         files: {
-          'css_build/site.min.css': ['css_min/*.css']
+          'css_build/site.min.css': ['css_build/*.css']
         }
       }
     }
