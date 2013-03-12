@@ -10,17 +10,13 @@ a {
 }
 
 body > header {
-	height: 5em;
+	height: auto;
 	background-color: #c3d23b;
 	color: #2b3134;
 	padding-top: 0em;
+	padding-bottom: 1.4em;
 	margin-bottom: 3em;
 	border-top: 0.4em solid #373e42;
-}
-
-header h1 {
-	font-family: 'Happy Monkey', Helvetica, Arial, sans-serif;
-	font-size: 1.8em;
 }
 
 body > img {
@@ -33,9 +29,9 @@ body > img {
 body > footer {
 	height: 14em;
 	background-color: #2b3134;
-	color: #deddd6;
+	color: #CFCEC5;
 	margin-bottom: 0;
-	padding-top: 8em;
+	padding-top: 4em;
 }
 
 footer > .site_wrap {
@@ -82,37 +78,30 @@ footer > .site_wrap {
 
 /* .index */
 
-/* .index classes with horizontal layout.
-		
-	 Simulate a bunch of blocks pushed against each other horizontally
-	 by using inline-block layout to create a horizontal effect. Because
-	 they're in the flow, children must have no space between them in
-	 the html.
-*/
-
 .logo_index {
-	/* To form grids with a horizontal index, line-height
-	   needs to be smaller than the items in the index. */
 	line-height: 0;
 }
 
 .logo_index > li {
+	/* This inline-block method produces nice flow, and with a bit of
+	   head scratching can be used for liquid columns with fixed gutters,
+	   or even mixed fixed and liquid columns, all with arbitrary content
+	   order. However, it is a little susceptible to rounding errors, and
+	   requires spaceless html. */
 	display: inline-block;
 	vertical-align: top;
+	
+	/* For those pour souls who don't understand inline-block (IE7). */
+	display: inline !IE7;
+	
+	/* Stop content pushing column wider than it should be */
+	overflow: visible;
+	width: 100%;
 }
-
-.logo_index > li:last-child {
-	margin-right: 0;
-}
-
-.logo_index > li.last {
-	margin-right: 0;
-}
-
 
 .logo_index > li {
-	margin-right: 3em;
-	text-align: left;
+	height: 5em;
+	text-align: right;
 }
 
 .logo_index > li > .logo_thumb {
@@ -554,6 +543,7 @@ label + .tabs_index {
 
 
 
+
 .cap_title {
 	text-transform: uppercase;
 	font-size: 0.6em;
@@ -562,5 +552,32 @@ label + .tabs_index {
 	line-height: 2em;
 	margin-bottom: 1em;
 	margin-top:  0;
+}
+
+
+.site_title,
+.page_title {
+	font-size: 1.8em;
+	line-height: 1em;
+	height: 1em;
+	margin-bottom: 0;
+}
+
+.site_title {
+	font-family: 'Happy Monkey', Helvetica, Arial, sans-serif;
+}
+
+.page_title {
+	text-transform: lowercase;
+	color: white;
+	font-size: 1.4em;
+	font-weight: 100;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+@media all and (min-width: 34.875em) {
+	.page_title {
+		font-size: 1.8em;
+	}
 }
 

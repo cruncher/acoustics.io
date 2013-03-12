@@ -10,6 +10,11 @@
 	display: block;
 }
 
+.sitetitle_block,
+.pagetitle_block {
+	margin-top: 0.6667em;
+}
+
 .data_block {
 	padding-left: 1em;
 	padding-right: 1em;
@@ -40,6 +45,8 @@
 }
 
 @media all and (min-width: 34.875em) {
+	.sitetitle_block,
+	.pagetitle_block,
 	.sources_block,
 	.total_block {
 		/* This inline-block method produces nice flow, and with a bit of
@@ -73,6 +80,14 @@
 
 	.app_wrap {
 		padding-right: 18em;
+	}
+
+	.sitetitle_block {
+		width: 6.25em;
+	}
+	
+	.pagetitle_block {
+		width: 70%;
 	}
 
 	.sources_block {
