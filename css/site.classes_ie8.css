@@ -1,0 +1,7 @@
+.tabs_index > li {
+	margin-right: -4px;
+}
+
+.tabs_index > li:last-child {
+	margin-right: 0;
+}
