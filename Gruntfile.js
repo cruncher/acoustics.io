@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             'sub/bolt/js/jquery.support.inputtypes.js',
             'sub/bolt/js/jquery.event.tap.js',
             'sub/bolt/js/jquery.event.activate.js',
-            'sub/bolt/js/jquery.transition.fallback.js',
+            'sub/bolt/js/jquery.transition.js',
             
             'sub/bolt/js/bolt.js',
             'sub/bolt/js/bolt.a.js',
