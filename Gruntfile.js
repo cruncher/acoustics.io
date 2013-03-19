@@ -17,12 +17,6 @@ module.exports = function(grunt) {
             'sub/bolt/js/jquery.event.activate.js',
             'sub/bolt/js/jquery.transition.js',
             
-            'sub/bolt/js/bolt.js',
-            'sub/bolt/js/bolt.a.js',
-            'sub/bolt/js/bolt.tip.js',
-            'sub/bolt/js/bolt.input.js',
-            'sub/bolt/js/bolt.input.placeholder.js',
-            
             'js/AcousticFunctions.js',
             'sub/app/js/model.js',
             'sub/app/js/app.js',
@@ -31,7 +25,12 @@ module.exports = function(grunt) {
             'js/noiseapp.models.total.js',
             'js/noiseapp.views.source.js',
             'js/noiseapp.views.total.js',
-            'js/noiseapp.views.form.js'
+            'js/noiseapp.views.form.js',
+
+            'sub/bolt/js/bolt.js',
+            'sub/bolt/js/bolt.a.js',
+            'sub/bolt/js/bolt.tip.js',
+            'sub/bolt/js/bolt.input.js'
           ],
         }
       }
