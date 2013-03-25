@@ -5,3 +5,13 @@
 .tabs_index > li:last-child {
 	margin-right: 0;
 }
+
+input[hidden],
+input.hidden {
+	/* IE hates having inputs hidden, so try just making them
+	   invisible. */
+	display: block;
+	position: absolute;
+	z-index: 0;
+	filter: alpha(opacity=0);
+}
