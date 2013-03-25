@@ -15,3 +15,14 @@ input.hidden {
 	z-index: 0;
 	filter: alpha(opacity=0);
 }
+
+.popup_layer,
+.loading_layer,
+.dialog_layer {
+  background-image: url('../sub/bolt/images/bg/rgba_0_0_0_70.png');
+  background-repeat: repeat;
+}
+
+.dialog_layer > .dialog {
+	margin-top: 3em;
+}
