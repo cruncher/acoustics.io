@@ -65,6 +65,9 @@
 				skinInputs(sourceNode);
 			}
 			
+			// Update checked states
+			jQuery('[checked]', sourceNode).trigger('update');
+			
 			sourcesWrap.removeClass(className);
 			className = 'sources_' + app.data.sources.length;
 			sourcesWrap.addClass(className);
